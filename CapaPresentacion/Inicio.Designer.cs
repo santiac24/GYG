@@ -39,7 +39,7 @@
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.vhjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.contenedor = new System.Windows.Forms.Panel();
             this.menu.SuspendLayout();
             this.menutitulo.SuspendLayout();
             this.SuspendLayout();
@@ -193,20 +193,20 @@
             this.vhjToolStripMenuItem.Text = "Sistema de Ventas";
             this.vhjToolStripMenuItem.Click += new System.EventHandler(this.vhjToolStripMenuItem_Click);
             // 
-            // panel1
+            // contenedor
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 132);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 318);
-            this.panel1.TabIndex = 2;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(0, 132);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(800, 318);
+            this.contenedor.TabIndex = 2;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.menutitulo);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -237,6 +237,6 @@
         private FontAwesome.Sharp.IconMenuItem menuproveedores;
         private FontAwesome.Sharp.IconMenuItem menuclientes;
         private FontAwesome.Sharp.IconMenuItem menureportes;
-        private Panel panel1;
+        private Panel contenedor;
     }
 }
