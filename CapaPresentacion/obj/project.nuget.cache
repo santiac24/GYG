@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LPqdptvBe4yKPpbl563BZecyVEbU7KYBsELWdtmR2y5nujNRiYFRegjPSVhcEP1H3y8xhf/TbO6oOZ+rFvQb7A==",
+  "dgSpecHash": "Kg8F+L0VZ1GW0kepclQU2naaSieYOO6g9S7QGupi5zY1Z0ucBrv2SWNOFQ3tzWQf/tb6g8gl01JSnFGl5Bgflw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaPresentacion\\CapaPresentacion.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Jose\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

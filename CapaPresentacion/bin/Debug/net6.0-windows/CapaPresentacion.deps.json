@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
+      "CapaPresentacion/1.0.0": {
+        "dependencies": {
+          "FontAwesome.Sharp": "6.3.0"
+        },
+        "runtime": {
+          "CapaPresentacion.dll": {}
+        }
+      },
       "FontAwesome.Sharp/6.3.0": {
         "runtime": {
           "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {
@@ -17,6 +25,11 @@
     }
   },
   "libraries": {
+    "CapaPresentacion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FontAwesome.Sharp/6.3.0": {
       "type": "package",
       "serviceable": true,
