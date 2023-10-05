@@ -1,0 +1,175 @@
+-- Correr primero el comando de crear la BBDD
+-- Luego correr el comando para usar la BBDD creada
+-- Finalmente correr los comandos de crear las tablas 
+
+-- Se crea la base de datos
+CREATE DATABASE DBSISTEMA_VENTAS
+ 
+ GO
+
+-- 
+
+USE DBSISTEMA_VENTAS
+
+ GO
+
+-- Se crean las tablas
+
+-- Tabla de roles
+create table ROLES(
+ Id_rol int primary key identity,
+ Rol varchar(50)
+)
+
+ GO
+
+-- Tabla de usuarios
+create table USUARIOS(
+ Id_usuario int primary key identity,
+ NombreUsuario varchar(50),
+ Contrasena varchar(50),
+ Rol_id int references ROLES(Id_rol)
+)
+
+ GO
+
+-- Tabla de sexos
+create table SEXOS(
+ Id_sexo int primary key identity,
+ Sexo varchar(50)
+)
+
+ GO
+
+
+-- Tabla de clientes
+create table CLIENTES(
+ Id_cliente int primary key identity,
+ Nombre varchar(50),
+ Cedula varchar(14),
+ Celular varchar(14),
+ Direccion varchar(40),
+ Fecha_nacimiento datetime default getDate(),
+ Sexo_id int references SEXOS(Id_sexo)
+ 
+)
+
+ GO
+
+-- Tabla de formas de pago
+create table FORMA_PAGO(
+ Id_forma_pago int primary key identity,
+ Forma_pago varchar(50)
+)
+
+ GO
+
+-- Tabla de tallas
+create table TALLAS(
+ Id_talla int primary key identity,
+ Talla varchar(18)
+)
+
+ GO
+
+-- Tabla de colores
+create table COLORES(
+ Id_color int primary key identity,
+ Color varchar(30)
+)
+
+ GO
+
+-- Tabla de categorias
+create table CATEGORIAS(
+ Id_categoria int primary key identity,
+ Categoria varchar(30)
+)
+
+ GO
+
+-- Tabla de subcategorias
+create table SUBCATEGORIAS(
+ Id_subcategoria int primary key identity,
+ subcategoria varchar(50),
+ Categoria_id int references CATEGORIAS(Id_categoria)
+)
+
+ GO
+
+-- Tabla de prendas
+create table PRENDAS(
+ Id_prenda int primary key identity,
+ Cantidad_dispo int,
+ Precio_compra decimal(10,2),
+ Precio_venta decimal(10,2),
+ Subcategoria_id int references SUBCATEGORIAS(Id_subcategoria),
+ Talla_id int references TALLAS(Id_talla),
+ Color_id int references COLORES(Id_color)
+)
+
+ GO
+
+-- Tabla de ventas
+create table VENTAS(
+ Id_venta int primary key identity,
+ Fecha datetime default getDate(),
+ Valor decimal(10,2),
+ Cliente_id int references CLIENTES(Id_cliente),
+ Usuario_id int references USUARIOS(Id_usuario),
+ Forma_pago_id int references FORMA_PAGO(Id_forma_pago)
+)
+
+ GO
+
+-- Tabla de detalles de ventas
+create table DETALLE_VENTAS(
+ Id_detalle_venta int primary key identity,
+ Venta_id int references VENTAS(Id_venta),
+ Prenda_id int references PRENDAS(Id_prenda),
+ Cantidad int,
+ Precio_venta_unidad decimal(10,2),
+ Subtotal decimal(10,2)
+)
+
+ GO
+
+-- Tabla de provedores
+create table PROVEDORES(
+ Id_provedor int primary key identity,
+ Provedor varchar(50)
+)
+
+ GO
+
+-- Tabla de compras
+create table COMPRAS(
+ Id_compra int primary key identity,
+ Fecha datetime default getDate(),
+ Valor decimal(10,2)
+)
+
+ GO
+
+-- Tabla de detalles de compras
+create table DETALLE_COMPRAS(
+ Id_detalle_compra int primary key identity,
+ Compra_id int references COMPRAS(Id_compra),
+ Prenda_id int references PRENDAS(Id_prenda),
+ Cantidad int,
+ Provedor_id int references PROVEDORES(Id_provedor),
+ Precio_venta_unidad decimal(10,2),
+ Subtotal decimal(10,2)
+)
+
+ GO
+
+-- Tabla de plan separes
+create table PLAN_SEPARES(
+ Id_separe int primary key identity,
+ Cliente_id int references CLIENTES(Id_cliente),
+ Venta_id int references VENTAS(Id_venta),
+ valor_restante decimal(10,2)
+)
+
+ GO
