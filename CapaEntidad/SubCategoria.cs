@@ -10,6 +10,6 @@ namespace CapaEntidad
     {
         public int Id_subcategoria { get; set; }
         public string subcategoria { get; set; }
-        public int Categoria_id { get; set; }
+        public Categorias Categoria_id { get; set; }
     }
 }

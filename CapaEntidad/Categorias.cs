@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Categorias_ropa
+    public class Categorias
     {
         public int Id_categoria { get; set; }
         public string Categoria { get; set; }

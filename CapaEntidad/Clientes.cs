@@ -13,6 +13,6 @@ namespace CapaEntidad
         public int Cedula { get; set; }
         public string Direccion { get; set; }
         public string Fecha_nacimiento { get; set; }
-        public int Sexo_id { get; set; }
+        public Sexos Sexo_id { get; set; }
     }
 }

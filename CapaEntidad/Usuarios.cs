@@ -7,7 +7,7 @@ namespace CapaEntidad
         public int Id_usuario {  get; set; }
         public string NombreUsuario { get; set; }
         public string Contrasena { get; set; }
-        public int Rol_id { get; set; }
+        public Rol Rol_id { get; set; }
     }
 }
 

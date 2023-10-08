@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class Forma_pago
+    public class Forma_pago
     {
+        public int Id_forma_pago { get; set; }
+        public string forma_pago { get; set; }
     }
 }

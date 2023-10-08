@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class Sexos
+    public class Sexos
     {
+        public int Id_sexo { get; set; }
+        public string Sexo { get; set; }
     }
 }
