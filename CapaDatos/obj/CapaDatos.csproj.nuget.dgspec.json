@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaDatos\\CapaDatos.csproj": {}
+    "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaDatos\\CapaDatos.csproj": {
+    "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaDatos\\CapaDatos.csproj",
+        "projectUniqueName": "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj",
         "projectName": "CapaDatos",
-        "projectPath": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaDatos\\CapaDatos.csproj",
-        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaDatos\\obj\\",
+        "projectPath": "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj",
+        "packagesPath": "C:\\Users\\Arbey Padilla\\.nuget\\packages\\",
+        "outputPath": "F:\\sistema_venta\\GYG\\CapaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arbey Padilla\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

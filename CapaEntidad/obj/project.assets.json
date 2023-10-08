@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Jose\\.nuget\\packages\\": {}
+    "C:\\Users\\Arbey Padilla\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaEntidad\\CapaEntidad.csproj",
+      "projectUniqueName": "F:\\sistema_venta\\GYG\\CapaEntidad\\CapaEntidad.csproj",
       "projectName": "CapaEntidad",
-      "projectPath": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaEntidad\\CapaEntidad.csproj",
-      "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose\\source\\repos\\SistemaVentasGyG\\CapaEntidad\\obj\\",
+      "projectPath": "F:\\sistema_venta\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+      "packagesPath": "C:\\Users\\Arbey Padilla\\.nuget\\packages\\",
+      "outputPath": "F:\\sistema_venta\\GYG\\CapaEntidad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Arbey Padilla\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
