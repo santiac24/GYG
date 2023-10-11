@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Arbey Padilla\\.nuget\\packages\\": {}
+    "C:\\Users\\santi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj",
+      "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaDatos\\CapaDatos.csproj",
       "projectName": "CapaDatos",
-      "projectPath": "F:\\sistema_venta\\GYG\\CapaDatos\\CapaDatos.csproj",
-      "packagesPath": "C:\\Users\\Arbey Padilla\\.nuget\\packages\\",
-      "outputPath": "F:\\sistema_venta\\GYG\\CapaDatos\\obj\\",
+      "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaDatos\\CapaDatos.csproj",
+      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Arbey Padilla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,8 +51,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -61,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
