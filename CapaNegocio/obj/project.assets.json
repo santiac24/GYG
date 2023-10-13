@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\santi\\.nuget\\packages\\": {}
+    "C:\\Users\\Jose\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaNegocio\\CapaNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\sistemas_empresarial\\GYG\\CapaNegocio\\CapaNegocio.csproj",
       "projectName": "CapaNegocio",
-      "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaNegocio\\CapaNegocio.csproj",
-      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaNegocio\\obj\\",
+      "projectPath": "C:\\Users\\Jose\\Desktop\\sistemas_empresarial\\GYG\\CapaNegocio\\CapaNegocio.csproj",
+      "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jose\\Desktop\\sistemas_empresarial\\GYG\\CapaNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
       }
     }
   }
