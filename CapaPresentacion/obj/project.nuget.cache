@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yLb4d0Nhxo01zwFaF+9iKkrZQCkzKzH20o1MLFDwnu74yH4ECHvAYYjqfJtpBhRd34ks5nEDMkuAkL31FYeFtQ==",
+  "dgSpecHash": "lRQeIY6tj8ZHL+WPNZdmk5Ll4gbuK3Q4S/TaOExAzFvOAN8an43KdJuEetgNhoqtqC5j46t5ppL4TDI9+HRCEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jose\\Desktop\\sistemas_empresarial\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
+  "projectFilePath": "/home/valeria/Descargas/GYG/CapaPresentacion/CapaPresentacion.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jose\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "/home/valeria/.nuget/packages/fontawesome.sharp/6.3.0/fontawesome.sharp.6.3.0.nupkg.sha512"
   ],
   "logs": []
 }
