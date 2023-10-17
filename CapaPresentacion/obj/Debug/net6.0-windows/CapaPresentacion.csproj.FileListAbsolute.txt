@@ -61,3 +61,8 @@ C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-
 C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.pdb
 C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.genruntimeconfig.cache
 C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\ref\CapaPresentacion.dll
+C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmCategoria.resources
+C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmCompras.resources
+C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmProducto.resources
+C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmUsuarios.resources
+C:\Users\santi\OneDrive\Documentos\GitHub\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmVentas.resources

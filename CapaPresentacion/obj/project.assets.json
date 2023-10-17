@@ -39,24 +39,26 @@
     ]
   },
   "packageFolders": {
-    "/home/valeria/.nuget/packages/": {}
+    "C:\\Users\\santi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/valeria/Descargas/GYG/CapaPresentacion/CapaPresentacion.csproj",
+      "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
       "projectName": "CapaPresentacion",
-      "projectPath": "/home/valeria/Descargas/GYG/CapaPresentacion/CapaPresentacion.csproj",
-      "packagesPath": "/home/valeria/.nuget/packages/",
-      "outputPath": "/home/valeria/Descargas/GYG/CapaPresentacion/obj/",
+      "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
+      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/valeria/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -86,8 +88,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -99,7 +100,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/valeria/.dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
