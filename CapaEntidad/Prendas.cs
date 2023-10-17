@@ -16,5 +16,7 @@ namespace CapaEntidad
         public SubCategoria Subcategoria_id { get; set; }
         public Tallas Talla_id { get; set; }
         public Colores Color_id { get; set; }
+        public string Prenda { get; set; }
+
     }
 }
