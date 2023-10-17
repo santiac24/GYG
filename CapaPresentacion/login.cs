@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using CapaEntidad:
 
 namespace CapaPresentacion
 {
@@ -40,8 +42,6 @@ namespace CapaPresentacion
             if (ousuario != null)
             {
                 Inicio form = new Inicio(ousuario);
-
-
                 form.Show();
                 this.Hide();
 
