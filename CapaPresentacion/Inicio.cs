@@ -19,9 +19,17 @@ namespace CapaPresentacion
         private static Usuarios usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        public Inicio(Usuarios objusuario)
+        public Inicio(Usuarios objusuario = null)
         {
-            usuarioActual = objusuario;
+            if(objusuario == null) //Para que mientras programemos, no nos pida estar logueando
+            {
+                usuarioActual = new Usuarios() { NombreUsuario = "ADMIN PREDEFINIDO", Id_usuario = 1 };
+            } else
+            {
+                //Se le pasa el usuario de la sesión
+                usuarioActual = objusuario;
+            }
+
             InitializeComponent();
         }
 
