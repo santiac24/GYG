@@ -94,9 +94,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(330, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 15);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Nro Documento";
+            this.label3.Text = "Usuario";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 

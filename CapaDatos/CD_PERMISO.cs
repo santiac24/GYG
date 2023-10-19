@@ -16,11 +16,11 @@ using CapaEntidad;
 
 namespace CapaDatos
 {
-    internal class CD_PERMISO
+    public class CD_PERMISO
     {
-        public List<Permiso> Listar(int idusuario)
+        public List<Permisos> Listar(int idusuario)
         {
-            List<Permiso> lista = new List<Permiso>();
+            List<Permisos> lista = new List<Permisos>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
@@ -39,9 +39,9 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Permiso()
+                            lista.Add(new Permisos()
                             {
-                                oRol = new Rol() { Rol_id = Convert.ToInt32(dr[Rol_id]) }
+                                oRol = new Rol() { Id_rol = Convert.ToInt32(dr["Rol_id"]) },
                                 NombreMenu = dr["NombreMenu"].ToString(),
 
                             });
@@ -50,7 +50,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Permiso>();
+                    lista = new List<Permisos>();
                 }
 
             }

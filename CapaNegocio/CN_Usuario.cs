@@ -14,7 +14,7 @@ namespace CapaNegocio
     	private CD_Usuario objcd_usuario = new CD_Usuario();
     	
     	
-    	public List<Usuario> Listar()
+    	public List<Usuarios> Listar()
     	{
     		return objcd_usuario.Listar();
     	}

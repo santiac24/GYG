@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
-using CapaEntidad:
+using CapaEntidad;
+using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -36,22 +37,7 @@ namespace CapaPresentacion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            List<Usuario> TEST = new CN_Usuario().Listar();
-            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
-
-            if (ousuario != null)
-            {
-                Inicio form = new Inicio(ousuario);
-                form.Show();
-                this.Hide();
-
-                form.FormClosing += frm_closing;
-            }
-            else
-            {
-                MessageBox.Show("No se encontro el ususario","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            }
-                
+            
 
         }
 
@@ -73,6 +59,26 @@ namespace CapaPresentacion
         }
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
+        {
+            List<Usuarios> TEST = new CN_Usuario().Listar();
+            Usuarios ousuario = new CN_Usuario().Listar().Where(u => u.NombreUsuario == txtDocumento.Text && u.Contrasena == txtClave.Text).FirstOrDefault();
+
+            if (ousuario != null)
+            {
+                Inicio form = new Inicio(ousuario);
+                form.Show();
+                this.Hide();
+
+                form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el ususario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

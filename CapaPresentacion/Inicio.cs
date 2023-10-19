@@ -9,15 +9,17 @@ using System.Windows.Forms;
 
 using CapaEntidad;
 using CapaNegocio;
+using CapaDatos;
 using FontAwesome.Sharp;
+
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
     {
-        private static Usuario usuarioActual;
+        private static Usuarios usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        public Inicio(Usuario objusuario)
+        public Inicio(Usuarios objusuario)
         {
             usuarioActual = objusuario;
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.Id_usuario);
+            List<Permisos> ListaPermisos = new CN_Permiso().Listar(usuarioActual.Id_usuario);
 
             foreach (IconMenuItem iconmenu in menu.Items)
             {
@@ -35,7 +37,7 @@ namespace CapaPresentacion
                     iconmenu.Visible = false;
                 }
             }
-            lblUsuario.Text = usuarioActual.NombreCompleto;
+            lblUsuario.Text = usuarioActual.NombreUsuario;
         }
 
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
