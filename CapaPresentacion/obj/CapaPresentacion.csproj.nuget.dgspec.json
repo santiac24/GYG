@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj": {}
+    "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaPresentacion\\CapaPresentacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj": {
+    "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaPresentacion\\CapaPresentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
         "projectName": "CapaPresentacion",
-        "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
-        "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\GitHub\\GYG\\CapaPresentacion\\obj\\",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaPresentacion\\CapaPresentacion.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaPresentacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
         }
       }
     }
