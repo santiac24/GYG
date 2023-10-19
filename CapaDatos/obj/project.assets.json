@@ -236,6 +236,16 @@
             "rid": "win"
           }
         }
+      },
+      "CapaEntidad/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CapaEntidad.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CapaEntidad.dll": {}
+        }
       }
     }
   },
@@ -734,10 +744,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CapaEntidad/1.0.0": {
+      "type": "project",
+      "path": "../CapaEntidad/CapaEntidad.csproj",
+      "msbuildProject": "../CapaEntidad/CapaEntidad.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CapaEntidad >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
@@ -768,7 +784,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
+              "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

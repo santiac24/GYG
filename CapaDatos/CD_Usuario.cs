@@ -27,21 +27,25 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Usuarios()
+                            var usuario = new Usuarios
                             {
-                                Id_usuario = Convert.ToInt32(dr['Id_usuario']);
-                            NombreUsuario = dr['NombreUsuario'].ToString();
-                            Contrasena = dr['Contrasena'].ToString();
-                            Rol_id = Convert.ToInt32(dr['Rol_id']);
-                        });
+                                Id_usuario = Convert.ToInt32(dr["Id_usuario"]),
+                                NombreUsuario = dr["NombreUsuario"].ToString(),
+                                Contrasena = dr["Contrasena"].ToString(),
+                                Rol_id = Convert.ToInt32(dr["Rol_id"])
+                            };
+                            lista.Add(usuario);
+                        }
+
                     }
                 }
-                }
+
                 catch (Exception ex)
-            {
-                lista = new List<Usuarios>();
+                {
+                    lista = new List<Usuarios>();
+                }
             }
-        }
+        
             return lista;
         }
 }
