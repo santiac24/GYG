@@ -12,6 +12,6 @@ namespace CapaEntidad
         public string Fecha { get; set; }
         public float Valor { get; set;}
 
-        public List<Detalle_compra> Odetalle_compra { get; set; }
+        public List<Detalles_compras> Odetalle_compra { get; set; }
     }
 }

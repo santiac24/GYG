@@ -7,8 +7,8 @@
         public float Valor { get; set; }
         public Clientes Cliente_id { get; set; }
         public Usuarios Usuario_id { get; set; }
-        public Forma_pago Forma_pago_id { get; set; }
-        public List<Detalle_ventas> Odetalle_venta { get; set; }
+        public Formas_pago Forma_pago_id { get; set; }
+        public List<Detalles_ventas> Odetalle_venta { get; set; }
 
     }
 }

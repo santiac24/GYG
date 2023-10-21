@@ -14,7 +14,7 @@ namespace CapaNegocio
         private CD_Rol objcd_permiso = new CD_Rol();
 
 
-        public List<Rol> Listar()
+        public List<Roles> Listar()
         {
             return objcd_permiso.Listar();
         }

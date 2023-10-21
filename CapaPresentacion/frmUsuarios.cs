@@ -30,10 +30,10 @@ namespace CapaPresentacion
 
             //Para agregar al Combobox de roles, los roles posibles
             //Traemos todos los roles y los guardamos en una lista
-            List<Rol> listaRol = new CN_Rol().Listar();
+            List<Roles> listaRol = new CN_Rol().Listar();
             
             //Recorremos cada uno de los elementos de la lista para agregarlos en el combo box
-            foreach(Rol item in listaRol)
+            foreach(Roles item in listaRol)
             {
                 cbrol.Items.Add(new OpcionesCombo() { Valor = item.Id_rol, Texto = item.rol});  
             }
@@ -56,6 +56,15 @@ namespace CapaPresentacion
             cbbusqueda.ValueMember = "Valor";
             cbbusqueda.SelectedIndex = 0;
 
+
+            //mostramos a todos los usuarios
+            List<Usuarios> listaUsuarios = new CN_Usuario().Listar();
+
+            //Recorremos cada uno de los elementos de la lista para agregarlos en el combo box
+            foreach (Usuarios item in listaUsuarios)
+            {
+                dgvusuarios.Rows.Add(new object[] { "", item.Id_usuario, item.Nombre, item.Usuario, item.Contrasena, item.o_Rol.Id_rol, item.o_Rol.rol });
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -100,6 +109,57 @@ namespace CapaPresentacion
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvusuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            //Que no concidere seleccionar la cavecera
+            if (e.RowIndex < 0) return;
+
+            if(e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.check.Width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x,y,w,h));
+                e.Handled = true;
+            }
+        }
+
+        private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvusuarios.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            {
+                int indice = e.RowIndex;
+
+                if(indice >= 0)
+                {
+                    txtid.Text = dgvusuarios.Rows[indice].Cells["IdUsuario"].Value.ToString();
+                    txtNombreCompleto.Text = dgvusuarios.Rows[indice].Cells["Nombre"].Value.ToString();
+                    txtNombreUsuario.Text = dgvusuarios.Rows[indice].Cells["Usuario"].Value.ToString();
+                    txtClave.Text = dgvusuarios.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    txtConfirmarClave.Text = dgvusuarios.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    
+                    foreach(OpcionesCombo oc in cbrol.Items)
+                    {
+                        if(Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvusuarios.Rows[indice].Cells["IdRol"].Value)){
+                            int indice_combo = cbrol.Items.IndexOf(oc);
+                            cbrol.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

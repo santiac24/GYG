@@ -8,9 +8,9 @@ namespace CapaDatos
 {
     public class CD_Rol
     {
-        public List<Rol> Listar()
+        public List<Roles> Listar()
         {
-            List<Rol> lista = new List<Rol>();
+            List<Roles> lista = new List<Roles>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
@@ -27,7 +27,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Rol()
+                            lista.Add(new Roles()
                             {
                                 Id_rol = Convert.ToInt32(dr["Id_rol"]),
                                 rol = dr["Rol"].ToString()
@@ -38,7 +38,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Rol>();
+                    lista = new List<Roles>();
                 }
 
             }

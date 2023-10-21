@@ -61,7 +61,7 @@ namespace CapaPresentacion
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
             List<Usuarios> TEST = new CN_Usuario().Listar();
-            Usuarios ousuario = new CN_Usuario().Listar().Where(u => u.NombreUsuario == txtDocumento.Text && u.Contrasena == txtClave.Text).FirstOrDefault();
+            Usuarios ousuario = new CN_Usuario().Listar().Where(u => u.Usuario == txtDocumento.Text && u.Contrasena == txtClave.Text).FirstOrDefault();
 
             if (ousuario != null)
             {
@@ -73,7 +73,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("No se encontro el ususario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se encontró el ususario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
@@ -81,6 +81,16 @@ namespace CapaPresentacion
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

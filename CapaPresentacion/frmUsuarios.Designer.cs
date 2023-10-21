@@ -44,13 +44,6 @@
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvusuarios = new System.Windows.Forms.DataGridView();
-            this.btnseleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +51,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnseleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,6 +250,90 @@
             this.dgvusuarios.RowTemplate.Height = 25;
             this.dgvusuarios.Size = new System.Drawing.Size(871, 390);
             this.dgvusuarios.TabIndex = 15;
+            this.dgvusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellContentClick);
+            this.dgvusuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvusuarios_CellPainting);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(199, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(871, 54);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Usuarios registrados";
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(128, 25);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(36, 23);
+            this.txtid.TabIndex = 17;
+            this.txtid.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(511, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Buscar por:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // cbbusqueda
+            // 
+            this.cbbusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbusqueda.FormattingEnabled = true;
+            this.cbbusqueda.Location = new System.Drawing.Point(592, 25);
+            this.cbbusqueda.Name = "cbbusqueda";
+            this.cbbusqueda.Size = new System.Drawing.Size(200, 23);
+            this.cbbusqueda.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(798, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 23);
+            this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.White;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton1.IconSize = 15;
+            this.iconButton1.Location = new System.Drawing.Point(969, 24);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(41, 23);
+            this.iconButton1.TabIndex = 21;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.White;
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.Color.White;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 15;
+            this.iconButton2.Location = new System.Drawing.Point(1016, 24);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(41, 23);
+            this.iconButton2.TabIndex = 22;
+            this.iconButton2.UseVisualStyleBackColor = false;
             // 
             // btnseleccionar
             // 
@@ -301,87 +385,6 @@
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
             this.Rol.Width = 150;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(199, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(871, 54);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Usuarios registrados";
-            // 
-            // txtid
-            // 
-            this.txtid.Location = new System.Drawing.Point(128, 25);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(36, 23);
-            this.txtid.TabIndex = 17;
-            this.txtid.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(511, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 15);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Buscar por:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // cbbusqueda
-            // 
-            this.cbbusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbusqueda.FormattingEnabled = true;
-            this.cbbusqueda.Location = new System.Drawing.Point(592, 25);
-            this.cbbusqueda.Name = "cbbusqueda";
-            this.cbbusqueda.Size = new System.Drawing.Size(200, 23);
-            this.cbbusqueda.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(798, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 23);
-            this.textBox1.TabIndex = 20;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 15;
-            this.iconButton1.Location = new System.Drawing.Point(969, 24);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(41, 23);
-            this.iconButton1.TabIndex = 21;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackColor = System.Drawing.Color.White;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 15;
-            this.iconButton2.Location = new System.Drawing.Point(1016, 24);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(41, 23);
-            this.iconButton2.TabIndex = 22;
-            this.iconButton2.UseVisualStyleBackColor = false;
             // 
             // frmUsuarios
             // 
@@ -441,6 +444,11 @@
         private DataGridView dgvusuarios;
         private Label label8;
         private TextBox txtid;
+        private Label label9;
+        private ComboBox cbbusqueda;
+        private TextBox textBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
         private DataGridViewTextBoxColumn btnseleccionar;
         private DataGridViewTextBoxColumn IdUsuario;
         private DataGridViewTextBoxColumn Nombre;
@@ -448,10 +456,5 @@
         private DataGridViewTextBoxColumn Contrasena;
         private DataGridViewTextBoxColumn IdRol;
         private DataGridViewTextBoxColumn Rol;
-        private Label label9;
-        private ComboBox cbbusqueda;
-        private TextBox textBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

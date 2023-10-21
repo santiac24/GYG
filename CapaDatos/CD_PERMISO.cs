@@ -16,7 +16,7 @@ using CapaEntidad;
 
 namespace CapaDatos
 {
-    public class CD_PERMISO
+    public class CD_Permiso
     {
         public List<Permisos> Listar(int idusuario)
         {
@@ -41,7 +41,7 @@ namespace CapaDatos
                         {
                             lista.Add(new Permisos()
                             {
-                                oRol = new Rol() { Id_rol = Convert.ToInt32(dr["Rol_id"]) },
+                                oRol = new Roles() { Id_rol = Convert.ToInt32(dr["Rol_id"]) },
                                 NombreMenu = dr["NombreMenu"].ToString(),
 
                             });

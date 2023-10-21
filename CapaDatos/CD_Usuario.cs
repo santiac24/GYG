@@ -19,7 +19,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select Id_usuario, NombreUsuario, Contrasena, Rol_id from usuarios";
+                    string query = "SELECT u.Id_usuario, u.Nombre, u.Usuario, u.Contrasena, u.Rol_id, r.Id_rol, r.Rol FROM usuarios u INNER JOIN roles r ON u.Rol_id=r.Id_rol;";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -30,9 +30,14 @@ namespace CapaDatos
                             var usuario = new Usuarios
                             {
                                 Id_usuario = Convert.ToInt32(dr["Id_usuario"]),
-                                NombreUsuario = dr["NombreUsuario"].ToString(),
+                                Nombre = dr["Nombre"].ToString(),
+                                Usuario = dr["Usuario"].ToString(),
                                 Contrasena = dr["Contrasena"].ToString(),
-                                Rol_id = Convert.ToInt32(dr["Rol_id"])
+                                o_Rol = new Roles()
+                                {
+                                    Id_rol = Convert.ToInt32(dr["Id_rol"]),
+                                    rol = dr["Rol"].ToString()
+                                }
                             };
                             lista.Add(usuario);
                         }

@@ -26,6 +26,15 @@ create table ROLES(
 -- Tabla de usuarios
 create table USUARIOS(
  Id_usuario int primary key identity,
+ Nombre varchar(50),
+ Usuario varchar(50),
+ Contrasena varchar(50),
+ Rol_id int references ROLES(Id_rol)
+)
+
+-- Tabla de usuarios
+create table USUARIOS(
+ Id_usuario int primary key identity,
  NombreUsuario varchar(50),
  Contrasena varchar(50),
  Rol_id int references ROLES(Id_rol)
@@ -182,6 +191,32 @@ FechaRegistro datetime default getDate())
 
 GO
 
+-- Procedimientos
+
+CREATE PROC P_REGISTRARUSUARIO(
+@Nombre varchar (50),
+@Usuario varchar (50),
+@Contrasena varchar (50),
+@IdRol int,
+@Respuesta bit output,
+@Mensaje varchar (500) output
+)
+as
+begin
+	set @Respuesta=0
+
+	if not exists(select * from USUARIOS where Usuario = @Usuario)
+	begin
+		INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
+		VALUES 
+		(@Nombre, @Usuario,@Contrasena, @IdRol)
+
+		SET @Respuesta = 1
+	end
+	else
+		set @Mensaje = 'Ya existe un usario con ese nombre de usuario'
+end
+
 -- inserts
 
 -- insert roles
@@ -191,7 +226,7 @@ insert into roles (rol) values
 
 
 -- insert permisos
-insert into PERMISOS(Rol_id, NombreMenu) values
+INSERT INTO PERMISOS(Rol_id, NombreMenu) values
 (1, 'menuusuarios'),
 (1, 'menumantenedor'),
 (1, 'menuventas'),
@@ -205,3 +240,8 @@ insert into PERMISOS(Rol_id, NombreMenu) values
 (2, 'menuclientes'),
 (2, 'menuproveedores'),
 (2, 'menuacercade')
+
+INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
+VALUES 
+('Jose Rivillas', 'joseale58', abc', 1);
+('Julián Trump', 'juliancho', 'def', 2);

@@ -5,9 +5,11 @@ namespace CapaEntidad
     public class Usuarios
     {
         public int Id_usuario {  get; set; }
-        public string NombreUsuario { get; set; }
+
+        public string Nombre { get; set; }
+        public string Usuario { get; set; }
         public string Contrasena { get; set; }
-        public int Rol_id { get; set; }
+        public Roles o_Rol { get; set; }
     }
 }
 

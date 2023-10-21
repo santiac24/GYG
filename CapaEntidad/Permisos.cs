@@ -13,6 +13,6 @@ namespace CapaEntidad
 
         public string FechaRegistro { get; set; }
 
-        public Rol oRol { get; set; }
+        public Roles oRol { get; set; }
     }
 }

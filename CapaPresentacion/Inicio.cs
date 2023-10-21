@@ -23,7 +23,7 @@ namespace CapaPresentacion
         {
             if(objusuario == null) //Para que mientras programemos, no nos pida estar logueando
             {
-                usuarioActual = new Usuarios() { NombreUsuario = "ADMIN PREDEFINIDO", Id_usuario = 1 };
+                usuarioActual = new Usuarios() { Usuario = "ADMIN PREDEFINIDO", Id_usuario = 1 };
             } else
             {
                 //Se le pasa el usuario de la sesión
@@ -45,7 +45,7 @@ namespace CapaPresentacion
                     iconmenu.Visible = false;
                 }
             }
-            lblUsuario.Text = usuarioActual.NombreUsuario;
+            lblUsuario.Text = usuarioActual.Usuario;
         }
 
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

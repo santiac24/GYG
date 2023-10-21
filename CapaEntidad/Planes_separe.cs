@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Plan_separe
+    public class Planes_separe
     {
         public int Id_separe { get; set; }
         public Clientes Cliente_id { get; set; }
