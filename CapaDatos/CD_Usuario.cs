@@ -53,5 +53,118 @@ namespace CapaDatos
         
             return lista;
         }
-}
+
+
+        public int Regitrar(Usuarios obj, out string Mensaje)
+        {
+            int idusuariogenerado = 0;
+            Mensaje = "";
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("P_REGISTRARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario);
+                    cmd.Parameters.AddWithValue("Contrasena", obj.Contrasena);
+                    cmd.Parameters.AddWithValue("IdRol", obj.o_Rol.Id_rol);
+                    cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    idusuariogenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+
+                }
+            catch (Exception ex)
+            {
+                idusuariogenerado = 0;
+                Mensaje = ex.Message;
+            }
+
+            return idusuariogenerado;
+        }
+
+        public bool Editar(Usuarios obj, out string Mensaje)
+        {
+            bool exito = false;
+            Mensaje = "";
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("P_EDITARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario);
+                    cmd.Parameters.AddWithValue("Contrasena", obj.Contrasena);
+                    cmd.Parameters.AddWithValue("IdRol", obj.o_Rol.Id_rol);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    exito = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Mensaje = ex.Message;
+            }
+
+            return exito;
+        }
+
+        public bool Eliminar(Usuarios obj, out string Mensaje)
+        {
+            bool exito = false;
+            Mensaje = "";
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("P_ELIMINARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    exito = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Mensaje = ex.Message;
+            }
+
+            return exito;
+        }
+    }
 }

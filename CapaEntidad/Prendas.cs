@@ -13,7 +13,7 @@ namespace CapaEntidad
 
         public float Precio_compra { get; set; }
         public float Precio_venta { get; set; }
-        public SubCategoria Subcategoria_id { get; set; }
+        public SubCategorias Subcategoria_id { get; set; }
         public Tallas Talla_id { get; set; }
         public Colores Color_id { get; set; }
         public string Prenda { get; set; }

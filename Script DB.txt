@@ -154,6 +154,7 @@ create table PROVEDORES(
 -- Tabla de compras
 create table COMPRAS(
  Id_compra int primary key identity,
+ Usuario_id int references USUARIOS(Id_usuario),
  Fecha datetime default getDate(),
  Valor decimal(10,2)
 )
@@ -193,7 +194,37 @@ GO
 
 -- Procedimientos
 
+--Para insertar un usuario:
+
 CREATE PROC P_REGISTRARUSUARIO(
+@Nombre varchar (50),
+@Usuario varchar (50),
+@Contrasena varchar (50),
+@IdRol int,
+@IdUsuarioResultado int output,
+@Mensaje varchar (500) output
+)
+as
+begin
+	SET @IdUsuarioResultado=0
+	SET @Mensaje=''
+
+	if not exists(select * from USUARIOS where Usuario = @Usuario)
+	begin
+		INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
+		VALUES 
+		(@Nombre, @Usuario,@Contrasena, @IdRol)
+
+		SET @IdUsuarioResultado = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'Ya existe un usario con ese nombre de usuario'
+end
+
+--Para actualizar un usuario:
+
+CREATE PROC P_EDITARUSUARIO(
+@Id_Usuario int,
 @Nombre varchar (50),
 @Usuario varchar (50),
 @Contrasena varchar (50),
@@ -205,17 +236,54 @@ as
 begin
 	set @Respuesta=0
 
-	if not exists(select * from USUARIOS where Usuario = @Usuario)
+	if not exists(select * from USUARIOS where Usuario = @Usuario AND Id_usuario!=@Id_Usuario)
 	begin
-		INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
-		VALUES 
-		(@Nombre, @Usuario,@Contrasena, @IdRol)
+		UPDATE USUARIOS SET
+		Nombre = @Nombre,
+		Usuario = @Usuario,
+		Contrasena = @Contrasena,
+		Rol_id = @IdRol
+		WHERE Id_usuario = @Id_Usuario
 
 		SET @Respuesta = 1
 	end
 	else
 		set @Mensaje = 'Ya existe un usario con ese nombre de usuario'
 end
+
+--Para eliminar un usuario
+
+CREATE PROC P_ELIMINARUSUARIO(
+@Id_Usuario int,
+@Respuesta bit output,
+@Mensaje varchar (500) output
+)
+as
+begin
+	SET @Respuesta=0
+	SET @Mensaje=''
+	DECLARE @Pasoreglas bit = 1
+
+	IF EXISTS(SELECT * FROM USUARIOS u INNER JOIN COMPRAS c ON u.Id_usuario=c.Usuario_id WHERE u.Id_usuario = c.Usuario_id)
+	BEGIN
+		SET @Pasoreglas=0
+		SET @Respuesta=0
+		SET @Mensaje = @Mensaje + 'El usuario tiene compras hechas por lo que no se puede eliminar\n'
+	END
+
+	IF EXISTS(SELECT * FROM USUARIOS u INNER JOIN VENTAS v ON u.Id_usuario=v.Usuario_id WHERE u.Id_usuario = v.Usuario_id)
+	BEGIN
+		SET @Pasoreglas=0
+		SET @Respuesta=0
+		SET @Mensaje = @Mensaje + 'El usuario ha hecho ventas por lo que no se puede eliminar \'
+	END
+
+	IF (@Pasoreglas=1)
+	BEGIN
+		DELETE FROM USUARIOS WHERE Id_usuario = @Id_Usuario
+		SET @Respuesta = 1
+	END
+END
 
 -- inserts
 

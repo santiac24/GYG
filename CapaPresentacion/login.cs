@@ -92,5 +92,10 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

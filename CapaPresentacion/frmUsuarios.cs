@@ -89,7 +89,30 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            dgvusuarios.Rows.Add(new object[] {"",txtid.Text,txtNombreCompleto.Text,txtNombreUsuario.Text, txtClave.Text, ((OpcionesCombo)cbrol.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbrol.SelectedItem).Texto.ToString() });
+
+            string mensaje = string.Empty;
+
+            Usuarios objusario = new Usuarios()
+            {
+                Id_usuario = Convert.ToInt32(txtid.Text),
+                Nombre = txtNombreCompleto.Text,
+                Contrasena = txtClave.Text,
+                o_Rol = new Roles()
+                {
+                    Id_rol = Convert.ToInt32(((OpcionesCombo)cbrol.SelectedItem).Valor)
+                },
+                Usuario = txtNombreUsuario.Text
+            };
+
+            int idusuariogenerado = new CN_Usuario().Registrar(objusario, out mensaje);
+
+            if(idusuariogenerado != 0)
+            {
+                dgvusuarios.Rows.Add(new object[] { "", txtid.Text, txtNombreCompleto.Text, txtNombreUsuario.Text, txtClave.Text, ((OpcionesCombo)cbrol.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbrol.SelectedItem).Texto.ToString() });
+            } else
+            {
+                MessageBox.Show(mensaje);
+            }
 
             //Se llama al método limpiar
             Limpiar();
@@ -160,6 +183,11 @@ namespace CapaPresentacion
 
                 }
             }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
