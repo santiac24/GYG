@@ -10,3 +10,14 @@ C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaEnt
 C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaEntidad\obj\Debug\net6.0\refint\CapaEntidad.dll
 C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.pdb
 C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaEntidad\obj\Debug\net6.0\ref\CapaEntidad.dll
+C:\Users\valer\Documents\gyg\CapaEntidad\bin\Debug\net6.0\CapaEntidad.deps.json
+C:\Users\valer\Documents\gyg\CapaEntidad\bin\Debug\net6.0\CapaEntidad.dll
+C:\Users\valer\Documents\gyg\CapaEntidad\bin\Debug\net6.0\CapaEntidad.pdb
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.AssemblyInfoInputs.cache
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.AssemblyInfo.cs
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.dll
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\refint\CapaEntidad.dll
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\CapaEntidad.pdb
+C:\Users\valer\Documents\gyg\CapaEntidad\obj\Debug\net6.0\ref\CapaEntidad.dll

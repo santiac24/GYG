@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj": {}
+    "C:\\Users\\valer\\Documents\\gyg\\CapaDatos\\CapaDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj": {
+    "C:\\Users\\valer\\Documents\\gyg\\CapaDatos\\CapaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj",
+        "projectUniqueName": "C:\\Users\\valer\\Documents\\gyg\\CapaDatos\\CapaDatos.csproj",
         "projectName": "CapaDatos",
-        "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj",
-        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\obj\\",
+        "projectPath": "C:\\Users\\valer\\Documents\\gyg\\CapaDatos\\CapaDatos.csproj",
+        "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\valer\\Documents\\gyg\\CapaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\valer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
-                "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj"
+              "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\CapaEntidad.csproj": {
+                "projectPath": "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\CapaEntidad.csproj"
               }
             }
           }
@@ -69,21 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
+    "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\CapaEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\CapaEntidad.csproj",
         "projectName": "CapaEntidad",
-        "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj",
-        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\obj\\",
+        "projectPath": "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\CapaEntidad.csproj",
+        "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\valer\\Documents\\gyg\\CapaEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\valer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -109,7 +109,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Contrasena", obj.Contrasena);
                     cmd.Parameters.AddWithValue("IdRol", obj.o_Rol.Id_rol);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -144,7 +144,7 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("P_ELIMINARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
 
                     cmd.CommandType = CommandType.StoredProcedure;
