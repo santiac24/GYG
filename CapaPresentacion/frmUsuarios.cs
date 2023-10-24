@@ -236,5 +236,30 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionesCombo)cbbusqueda.SelectedItem).Valor.ToString();
+            if(dgvusuarios.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvusuarios.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else { row.Visible = false; }
+                }
+            }
+        }
+
+        private void btnlimpiarbuscador_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+            foreach (DataGridViewRow row in dgvusuarios.Rows)
+            {
+                    row.Visible = true;
+            }
+        }
     }
 }
