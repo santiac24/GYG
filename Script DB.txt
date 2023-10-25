@@ -285,6 +285,74 @@ begin
 	END
 END
 
+---- procedimientos para categorias ----
+
+--procedimiento para guardar categoria
+CREATE PROC SP_Registrarcategoria(
+@Categoria varchar(30),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as 
+begin 
+	SET @Resultado = 0
+	IF NOT EXISTS (SELECT * FROM CATEGORIAS WHERE Categoria = @Categoria)
+	begin 
+		insert into CATEGORIAS(Categoria) values (@Categoria)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE 
+		set @Mensaje ='No se puede repetir la categoria'
+end
+
+go
+
+-- Procedimiento para modificar categoria
+create procedure SP_EditarCategoria(
+@IdCategoria int,
+@Categoria varchar(30),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (select * from CATEGORIAS where Categoria = @Categoria)
+		update CATEGORIAS set
+		Categoria = @Categoria
+		where Id_categoria = @IdCategoria
+	else
+	begin 
+		set @Resultado = 0
+		set @Mensaje = 'No se puede repetir la categoria'
+	end
+
+end
+
+go
+
+create procedure SP_EliminarCategoria(
+@IdCategoria int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Resultado = 1
+	if not exists (
+		select * from CATEGORIAS c
+		inner join SUBCATEGORIAS sc on sc.Categoria_id = c.Id_categoria
+		where c.Id_categoria = @IdCategoria
+	)
+	begin 
+		delete top(1) from CATEGORIAS where Id_categoria = @IdCategoria
+	end
+	else
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'La categoria se encuentra relacionada a una subcategoria'
+	end
+end
+
 -- inserts
 
 -- insert roles
