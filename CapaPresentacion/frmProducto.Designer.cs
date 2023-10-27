@@ -37,18 +37,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.seleccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btnlimpiar = new FontAwesome.Sharp.IconButton();
@@ -64,6 +52,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.seleccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_prenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad_dispo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subcategoria_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talla_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,17 +164,17 @@
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.seleccion,
-            this.IdUsuario,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Nombre,
-            this.Usuario,
-            this.Contrasena,
-            this.IdRol,
-            this.Rol});
+            this.Id_prenda,
+            this.Prenda,
+            this.Cantidad_dispo,
+            this.Precio_compra,
+            this.Precio_venta,
+            this.Subcategoria_id,
+            this.Subcategoria,
+            this.Talla_id,
+            this.Talla,
+            this.Color_id,
+            this.Color});
             this.dgvdata.Location = new System.Drawing.Point(203, 89);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
@@ -182,88 +182,6 @@
             this.dgvdata.RowTemplate.Height = 25;
             this.dgvdata.Size = new System.Drawing.Size(1058, 390);
             this.dgvdata.TabIndex = 39;
-            // 
-            // seleccion
-            // 
-            this.seleccion.DataPropertyName = "seleccion";
-            this.seleccion.HeaderText = "";
-            this.seleccion.Name = "seleccion";
-            this.seleccion.ReadOnly = true;
-            this.seleccion.Width = 50;
-            // 
-            // IdUsuario
-            // 
-            this.IdUsuario.HeaderText = "Id_prenda";
-            this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.ReadOnly = true;
-            this.IdUsuario.Visible = false;
-            this.IdUsuario.Width = 200;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 250;
-            // 
-            // Contrasena
-            // 
-            this.Contrasena.HeaderText = "Contraseña";
-            this.Contrasena.Name = "Contrasena";
-            this.Contrasena.ReadOnly = true;
-            this.Contrasena.Visible = false;
-            // 
-            // IdRol
-            // 
-            this.IdRol.HeaderText = "IdRol";
-            this.IdRol.Name = "IdRol";
-            this.IdRol.ReadOnly = true;
-            this.IdRol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdRol.Visible = false;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 150;
             // 
             // label7
             // 
@@ -429,6 +347,88 @@
             this.label1.Size = new System.Drawing.Size(181, 749);
             this.label1.TabIndex = 24;
             // 
+            // seleccion
+            // 
+            this.seleccion.DataPropertyName = "seleccion";
+            this.seleccion.HeaderText = "";
+            this.seleccion.Name = "seleccion";
+            this.seleccion.ReadOnly = true;
+            this.seleccion.Width = 50;
+            // 
+            // Id_prenda
+            // 
+            this.Id_prenda.HeaderText = "Id_prenda";
+            this.Id_prenda.Name = "Id_prenda";
+            this.Id_prenda.ReadOnly = true;
+            this.Id_prenda.Visible = false;
+            this.Id_prenda.Width = 200;
+            // 
+            // Prenda
+            // 
+            this.Prenda.HeaderText = "Prenda";
+            this.Prenda.Name = "Prenda";
+            this.Prenda.ReadOnly = true;
+            // 
+            // Cantidad_dispo
+            // 
+            this.Cantidad_dispo.HeaderText = "Disponible";
+            this.Cantidad_dispo.Name = "Cantidad_dispo";
+            this.Cantidad_dispo.ReadOnly = true;
+            // 
+            // Precio_compra
+            // 
+            this.Precio_compra.HeaderText = "Precio compra";
+            this.Precio_compra.Name = "Precio_compra";
+            this.Precio_compra.ReadOnly = true;
+            // 
+            // Precio_venta
+            // 
+            this.Precio_venta.HeaderText = "Precio venta";
+            this.Precio_venta.Name = "Precio_venta";
+            this.Precio_venta.ReadOnly = true;
+            // 
+            // Subcategoria_id
+            // 
+            this.Subcategoria_id.HeaderText = "Subcategoria_id";
+            this.Subcategoria_id.Name = "Subcategoria_id";
+            this.Subcategoria_id.ReadOnly = true;
+            // 
+            // Subcategoria
+            // 
+            this.Subcategoria.HeaderText = "Subcategoria";
+            this.Subcategoria.Name = "Subcategoria";
+            this.Subcategoria.ReadOnly = true;
+            this.Subcategoria.Width = 250;
+            // 
+            // Talla_id
+            // 
+            this.Talla_id.HeaderText = "Talla_id";
+            this.Talla_id.Name = "Talla_id";
+            this.Talla_id.ReadOnly = true;
+            this.Talla_id.Width = 250;
+            // 
+            // Talla
+            // 
+            this.Talla.HeaderText = "Talla";
+            this.Talla.Name = "Talla";
+            this.Talla.ReadOnly = true;
+            this.Talla.Visible = false;
+            // 
+            // Color_id
+            // 
+            this.Color_id.HeaderText = "Color_id";
+            this.Color_id.Name = "Color_id";
+            this.Color_id.ReadOnly = true;
+            this.Color_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Color_id.Visible = false;
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            this.Color.Width = 150;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -477,18 +477,6 @@
         private Label label8;
         private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
         private DataGridView dgvdata;
-        private DataGridViewTextBoxColumn seleccion;
-        private DataGridViewTextBoxColumn IdUsuario;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn Contrasena;
-        private DataGridViewTextBoxColumn IdRol;
-        private DataGridViewTextBoxColumn Rol;
         private Label label7;
         private FontAwesome.Sharp.IconButton btneliminar;
         private FontAwesome.Sharp.IconButton btnlimpiar;
@@ -504,5 +492,17 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private DataGridViewTextBoxColumn seleccion;
+        private DataGridViewTextBoxColumn Id_prenda;
+        private DataGridViewTextBoxColumn Prenda;
+        private DataGridViewTextBoxColumn Cantidad_dispo;
+        private DataGridViewTextBoxColumn Precio_compra;
+        private DataGridViewTextBoxColumn Precio_venta;
+        private DataGridViewTextBoxColumn Subcategoria_id;
+        private DataGridViewTextBoxColumn Subcategoria;
+        private DataGridViewTextBoxColumn Talla_id;
+        private DataGridViewTextBoxColumn Talla;
+        private DataGridViewTextBoxColumn Color_id;
+        private DataGridViewTextBoxColumn Color;
     }
 }
