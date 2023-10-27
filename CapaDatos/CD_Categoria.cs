@@ -26,11 +26,12 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Categorias()
+                            var Categorias = new Categorias
                             {
-                                Id_categoria = Convert.ToInt32(dr["Id_usuario"]),
-                                Categoria = dr["Nombre"].ToString()
-                            });
+                                Id_categoria = Convert.ToInt32(dr["Id_categoria"]),
+                                Categoria = dr["Categoria"].ToString()
+                            };
+                            lista.Add(Categorias);
                         }
 
                     }
