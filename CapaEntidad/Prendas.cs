@@ -9,14 +9,14 @@ namespace CapaEntidad
     public class Prendas
     {
         public int Id_prenda { get; set; }
+        public string Prenda { get; set; }
         public int Cantidad_dispo { get; set; }
 
-        public float Precio_compra { get; set; }
-        public float Precio_venta { get; set; }
+        public decimal Precio_compra { get; set; }
+        public decimal Precio_venta { get; set; }
         public SubCategorias Subcategoria_id { get; set; }
         public Tallas Talla_id { get; set; }
         public Colores Color_id { get; set; }
-        public string Prenda { get; set; }
 
     }
 }
