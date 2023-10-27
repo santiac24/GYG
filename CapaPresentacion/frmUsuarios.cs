@@ -44,7 +44,7 @@ namespace CapaPresentacion
             cbrol.SelectedIndex = 0;
 
             //Agregamos los criterios de búsqueda
-            foreach (DataGridViewColumn columna in dgvusuarios.Columns)
+            foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true)
                 {
@@ -63,7 +63,7 @@ namespace CapaPresentacion
             //Recorremos cada uno de los elementos de la lista para agregarlos en el combo box
             foreach (Usuarios item in listaUsuarios)
             {
-                dgvusuarios.Rows.Add(new object[] { "", item.Id_usuario, item.Nombre, item.Usuario, item.Contrasena, item.o_Rol.Id_rol, item.o_Rol.rol });
+                dgvdata.Rows.Add(new object[] { "", item.Id_usuario, item.Nombre, item.Usuario, item.Contrasena, item.o_Rol.Id_rol, item.o_Rol.rol });
             }
         }
 
@@ -92,7 +92,8 @@ namespace CapaPresentacion
 
                     if (respuesta)
                     {
-                        dgvusuarios.Rows.RemoveAt(Convert.ToInt32(txtid.Text));
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                        Limpiar();
                     }
                     else
                     {
@@ -130,7 +131,7 @@ namespace CapaPresentacion
 
                 if (idusuariogenerado != 0)
                 {
-                    dgvusuarios.Rows.Add(new object[] { "", txtid.Text, txtNombreCompleto.Text, txtNombreUsuario.Text, txtClave.Text, ((OpcionesCombo)cbrol.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbrol.SelectedItem).Texto.ToString() });
+                    dgvdata.Rows.Add(new object[] { "", txtid.Text, txtNombreCompleto.Text, txtNombreUsuario.Text, txtClave.Text, ((OpcionesCombo)cbrol.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbrol.SelectedItem).Texto.ToString() });
                 }
                 else
                 {
@@ -144,11 +145,11 @@ namespace CapaPresentacion
                 if (resutado)
                 {
 
-                    DataGridViewRow row = dgvusuarios.Rows[Convert.ToInt32(txtid.Text) - 1];//fila seleccionada
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];//fila seleccionada
                     row.Cells["IdUsuario"].Value = txtid.Text;
                     row.Cells["Nombre"].Value = txtNombreCompleto.Text;
                     row.Cells["Usuario"].Value = txtNombreUsuario.Text;
-                    row.Cells["contraseña"].Value = txtClave.Text;
+                    row.Cells["contrasena"].Value = txtClave.Text;
                     row.Cells["IdRol"].Value = ((OpcionesCombo)cbrol.SelectedItem).Valor.ToString();
                     row.Cells["Rol"].Value = ((OpcionesCombo)cbrol.SelectedItem).Texto.ToString();
 
@@ -167,6 +168,7 @@ namespace CapaPresentacion
 
         private void Limpiar()
         {
+            txtindice.Text = "-1";
             txtid.Text = "0";
             txtNombreCompleto.Text = "";
             txtNombreUsuario.Text = "";
@@ -185,7 +187,7 @@ namespace CapaPresentacion
 
         }
 
-        private void dgvusuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             //Que no concidere seleccionar la cavecera
             if (e.RowIndex < 0) return;
@@ -204,23 +206,23 @@ namespace CapaPresentacion
             }
         }
 
-        private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvusuarios.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
                 int indice = e.RowIndex;
 
                 if (indice >= 0)
                 {
-                    txtid.Text = dgvusuarios.Rows[indice].Cells["IdUsuario"].Value.ToString();
-                    txtNombreCompleto.Text = dgvusuarios.Rows[indice].Cells["Nombre"].Value.ToString();
-                    txtNombreUsuario.Text = dgvusuarios.Rows[indice].Cells["Usuario"].Value.ToString();
-                    txtClave.Text = dgvusuarios.Rows[indice].Cells["Contrasena"].Value.ToString();
-                    txtConfirmarClave.Text = dgvusuarios.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
+                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
+                    txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
+                    txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
 
                     foreach (OpcionesCombo oc in cbrol.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvusuarios.Rows[indice].Cells["IdRol"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
                         {
                             int indice_combo = cbrol.Items.IndexOf(oc);
                             cbrol.SelectedIndex = indice_combo;
@@ -232,6 +234,7 @@ namespace CapaPresentacion
             }
         }
 
+
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -240,9 +243,9 @@ namespace CapaPresentacion
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionesCombo)cbbusqueda.SelectedItem).Valor.ToString();
-            if(dgvusuarios.Rows.Count > 0)
+            if (dgvdata.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvusuarios.Rows)
+                foreach (DataGridViewRow row in dgvdata.Rows)
                 {
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                     {
@@ -256,9 +259,39 @@ namespace CapaPresentacion
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
-            foreach (DataGridViewRow row in dgvusuarios.Rows)
+            foreach (DataGridViewRow row in dgvdata.Rows)
             {
-                    row.Visible = true;
+                row.Visible = true;
+            }
+        }
+
+        private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dgvdata.CurrentRow.Selected = true;
+            if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
+                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
+                    txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
+                    txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+
+                    foreach (OpcionesCombo oc in cbrol.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
+                        {
+                            int indice_combo = cbrol.Items.IndexOf(oc);
+                            cbrol.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                }
             }
         }
     }

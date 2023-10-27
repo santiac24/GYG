@@ -95,7 +95,7 @@ namespace CapaDatos
 
         public bool Editar(Usuarios obj, out string Mensaje)
         {
-            bool exito = false;
+            bool Respuesta = false;
             Mensaje = "";
 
             try
@@ -103,7 +103,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("P_EDITARUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
+                    cmd.Parameters.AddWithValue("Id_Usuario", obj.Id_usuario);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Usuario", obj.Usuario);
                     cmd.Parameters.AddWithValue("Contrasena", obj.Contrasena);
@@ -118,18 +118,18 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    exito = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
 
             }
             catch (Exception ex)
             {
-                exito = false;
+                Respuesta = false;
                 Mensaje = ex.Message;
             }
 
-            return exito;
+            return Respuesta;
         }
 
         public bool Eliminar(Usuarios obj, out string Mensaje)
@@ -142,7 +142,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("P_ELIMINARUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
+                    cmd.Parameters.AddWithValue("Id_Usuario", obj.Id_usuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 

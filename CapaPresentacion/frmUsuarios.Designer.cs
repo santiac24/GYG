@@ -43,8 +43,8 @@
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btneliminar = new FontAwesome.Sharp.IconButton();
             label7 = new Label();
-            dgvusuarios = new DataGridView();
-            btnseleccionar = new DataGridViewTextBoxColumn();
+            dgvdata = new DataGridView();
+            seleccion = new DataGridViewTextBoxColumn();
             IdUsuario = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
@@ -58,7 +58,8 @@
             txtbusqueda = new TextBox();
             btnBuscar = new FontAwesome.Sharp.IconButton();
             btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)dgvusuarios).BeginInit();
+            txtindice = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -232,27 +233,29 @@
             label7.Text = "Usuario";
             label7.Click += label7_Click;
             // 
-            // dgvusuarios
+            // dgvdata
             // 
-            dgvusuarios.AllowUserToAddRows = false;
-            dgvusuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvusuarios.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Nombre, Usuario, Contrasena, IdRol, Rol });
-            dgvusuarios.Location = new Point(199, 76);
-            dgvusuarios.MultiSelect = false;
-            dgvusuarios.Name = "dgvusuarios";
-            dgvusuarios.ReadOnly = true;
-            dgvusuarios.RowTemplate.Height = 25;
-            dgvusuarios.Size = new Size(871, 390);
-            dgvusuarios.TabIndex = 15;
-            dgvusuarios.CellContentClick += dgvusuarios_CellContentClick;
-            dgvusuarios.CellPainting += dgvusuarios_CellPainting;
+            dgvdata.AllowUserToAddRows = false;
+            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { seleccion, IdUsuario, Nombre, Usuario, Contrasena, IdRol, Rol });
+            dgvdata.Location = new Point(199, 76);
+            dgvdata.MultiSelect = false;
+            dgvdata.Name = "dgvdata";
+            dgvdata.ReadOnly = true;
+            dgvdata.RowTemplate.Height = 25;
+            dgvdata.Size = new Size(871, 390);
+            dgvdata.TabIndex = 15;
+            dgvdata.CellClick += dgvdata_CellClick;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
-            // btnseleccionar
+            // seleccion
             // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 50;
+            seleccion.DataPropertyName = "seleccion";
+            seleccion.HeaderText = "";
+            seleccion.Name = "seleccion";
+            seleccion.ReadOnly = true;
+            seleccion.Width = 50;
             // 
             // IdUsuario
             // 
@@ -314,12 +317,11 @@
             // 
             // txtid
             // 
-            txtid.Location = new Point(128, 25);
+            txtid.Location = new Point(131, 0);
             txtid.Name = "txtid";
             txtid.Size = new Size(36, 23);
             txtid.TabIndex = 17;
             txtid.Text = "0";
-            txtid.Visible = false;
             // 
             // label9
             // 
@@ -386,12 +388,21 @@
             btnlimpiarbuscador.UseVisualStyleBackColor = false;
             btnlimpiarbuscador.Click += btnlimpiarbuscador_Click;
             // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(86, 0);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(36, 23);
+            txtindice.TabIndex = 23;
+            txtindice.Text = "0";
+            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1028, 476);
+            Controls.Add(txtindice);
             Controls.Add(btnlimpiarbuscador);
             Controls.Add(btnBuscar);
             Controls.Add(txtbusqueda);
@@ -399,7 +410,7 @@
             Controls.Add(label9);
             Controls.Add(txtid);
             Controls.Add(label8);
-            Controls.Add(dgvusuarios);
+            Controls.Add(dgvdata);
             Controls.Add(label7);
             Controls.Add(btneliminar);
             Controls.Add(btnlimpiar);
@@ -418,7 +429,7 @@
             Name = "frmUsuarios";
             Text = "frmUsuarios";
             Load += frmUsuarios_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvusuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -440,7 +451,7 @@
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btneliminar;
         private Label label7;
-        private DataGridView dgvusuarios;
+        private DataGridView dgvdata;
         private Label label8;
         private TextBox txtid;
         private Label label9;
@@ -448,12 +459,13 @@
         private TextBox txtbusqueda;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
-        private DataGridViewTextBoxColumn btnseleccionar;
+        private DataGridViewTextBoxColumn seleccion;
         private DataGridViewTextBoxColumn IdUsuario;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Usuario;
         private DataGridViewTextBoxColumn Contrasena;
         private DataGridViewTextBoxColumn IdRol;
         private DataGridViewTextBoxColumn Rol;
+        private TextBox txtindice;
     }
 }
