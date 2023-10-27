@@ -380,6 +380,7 @@
             this.Precio_compra.HeaderText = "Precio compra";
             this.Precio_compra.Name = "Precio_compra";
             this.Precio_compra.ReadOnly = true;
+            this.Precio_compra.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Precio_venta
             // 
@@ -392,6 +393,7 @@
             this.Subcategoria_id.HeaderText = "Subcategoria_id";
             this.Subcategoria_id.Name = "Subcategoria_id";
             this.Subcategoria_id.ReadOnly = true;
+            this.Subcategoria_id.Visible = false;
             // 
             // Subcategoria
             // 
@@ -405,6 +407,7 @@
             this.Talla_id.HeaderText = "Talla_id";
             this.Talla_id.Name = "Talla_id";
             this.Talla_id.ReadOnly = true;
+            this.Talla_id.Visible = false;
             this.Talla_id.Width = 250;
             // 
             // Talla
@@ -412,7 +415,6 @@
             this.Talla.HeaderText = "Talla";
             this.Talla.Name = "Talla";
             this.Talla.ReadOnly = true;
-            this.Talla.Visible = false;
             // 
             // Color_id
             // 
