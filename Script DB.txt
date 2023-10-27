@@ -361,6 +361,99 @@ begin
 	end
 end
 
+--- PROCEDIMIENTOS PARA PRODUCTOS -----
+CREATE PROC SP_Registrarprenda(
+@Prenda varchar(500),
+@Subcategoria_id int,
+@Talla_id int,
+@Color_id int,
+@Cantidad_dispo int,
+@Precio_compra decimal(10,2),
+@Precio_venta decimal(10,2),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 0
+	SET @Mensaje = 0
+	IF NOT EXISTS (SELECT * FROM PRENDAS WHERE Prenda=@Prenda)
+	begin 
+		insert into PRENDAS(Prenda, Subcategoria_id, Talla_id, Color_id, Cantidad_dispo, Precio_compra, Precio_venta)
+		values(@Prenda, @Subcategoria_id, @Talla_id,@Color_id, @Cantidad_dispo, @Precio_compra, @Precio_venta)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE
+		set @Mensaje = 'Ya existe una prenda con este nombre'
+
+end
+
+GO
+CREATE PROCEDURE SP_Modificarprenda(
+@Id_prenda int,
+@Prenda varchar(500),
+@Subcategoria_id int,
+@Talla_id int,
+@Color_id int,
+@Cantidad_dispo int,
+@Precio_compra decimal(10,2),
+@Precio_venta decimal(10,2),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	set @Resultado = 1
+	if not exists (select * from PRENDAS where Id_prenda != @Id_prenda and prenda = @Prenda)
+		update PRENDAS set
+		Cantidad_dispo = @Cantidad_dispo,
+		Precio_compra = @Precio_compra,
+		@Precio_venta = @Precio_venta,
+		Subcategoria_id = @Subcategoria_id,
+		Talla_id = @Talla_id,
+		Color_id = @Color_id
+		where Prenda = @Prenda
+	else
+	begin
+		set @Resultado = 0
+		set @Mensaje = 'Ya existe una prenda con ese mismo nombre'
+	end
+end
+go
+
+CREATE PROC SP_Eliminarprenda(
+@Id_prenda int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)as
+begin 
+	set @Respuesta = 0
+	set @Mensaje = ''
+	declare @pasoreglas bit = 1
+
+	if exists (select * from DETALLE_COMPRAS dc
+	INNER JOIN PRENDAS P ON P.Id_prenda = DC.Prenda_id
+	WHERE P.Id_prenda = @Id_prenda
+	)
+	BEGIN
+		SET @pasoreglas = 0
+		SET @Respuesta = 0
+		SET @Mensaje = @Mensaje + 'No se puede eliminar una prenda relacionada a una compra'
+	END
+	if exists (select * from DETALLE_VENTAS dv 
+	inner join PRENDAS p on p.Id_prenda = dv.Prenda_id
+	where p.Id_prenda = @Id_prenda
+	)
+	begin
+		set @pasoreglas = 0
+		SET @Respuesta = 0
+		SET @Mensaje = @Mensaje + 'No se puede eliminar una prenda relacionada a una venta'
+	end
+	if(@pasoreglas = 1)
+	begin
+		delete from PRENDAS where Id_prenda = @Id_prenda
+		set @Respuesta = 1
+	end
+end
+
 -- inserts
 
 -- insert roles
