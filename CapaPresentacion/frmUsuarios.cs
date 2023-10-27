@@ -294,5 +294,10 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void frmUsuarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -68,6 +68,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cbcolor = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnBuscar.IconSize = 15;
-            this.btnBuscar.Location = new System.Drawing.Point(973, 37);
+            this.btnBuscar.Location = new System.Drawing.Point(997, 38);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(41, 23);
             this.btnBuscar.TabIndex = 45;
@@ -140,10 +141,10 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(218, 22);
             this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.label8.Padding = new System.Windows.Forms.Padding(2, 7, 0, 0);
             this.label8.Size = new System.Drawing.Size(1058, 54);
             this.label8.TabIndex = 40;
-            this.label8.Text = "Prendas registradas";
+            this.label8.Text = "v";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btnlimpiarbuscador
@@ -473,11 +474,29 @@
             this.label11.TabIndex = 52;
             this.label11.Text = "Color";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.White;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 15;
+            this.iconButton1.Location = new System.Drawing.Point(1044, 38);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(41, 23);
+            this.iconButton1.TabIndex = 54;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 581);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.cbcolor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cbtalla);
@@ -508,6 +527,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmProducto";
             this.Text = "frmProducto";
+            this.Load += new System.EventHandler(this.frmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -556,5 +576,6 @@
         private Label label10;
         private ComboBox cbcolor;
         private Label label11;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

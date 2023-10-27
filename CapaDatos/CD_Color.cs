@@ -1,24 +1,25 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaEntidad;
 
 namespace CapaDatos
 {
-    public class CD_Categoria
+    public class CD_Color
     {
-        public List<Categorias> Listar()
+
+        public List<Colores> Listar()
         {
-            List<Categorias> lista = new List<Categorias>();
+            List<Colores> lista = new List<Colores>();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string query = "select Id_categoria, Categoria from CATEGORIAS";
+                    string query = "select Id_color ,Color from COLORES";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -26,12 +27,12 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            var Categorias = new Categorias
+                            var Colores = new Colores
                             {
-                                Id_categoria = Convert.ToInt32(dr["Id_categoria"]),
-                                Categoria = dr["Categoria"].ToString()
+                                Id_color = Convert.ToInt32(dr["Id_color"]),
+                                Color = dr["Color"].ToString()
                             };
-                            lista.Add(Categorias);
+                            lista.Add(Colores);
                         }
 
                     }
@@ -39,7 +40,7 @@ namespace CapaDatos
 
                 catch (Exception ex)
                 {
-                    lista = new List<Categorias>();
+                    lista = new List<Colores>();
                 }
             }
 
@@ -47,7 +48,7 @@ namespace CapaDatos
         }
 
 
-        public int Regitrar(Categorias obj, out string Mensaje)
+        public int Regitrar(Colores obj, out string Mensaje)
         {
             int resultado = 0;
             Mensaje = "";
@@ -56,8 +57,8 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_Registrarcategoria", oconexion);
-                    cmd.Parameters.AddWithValue("Categoria", obj.Categoria);
+                    SqlCommand cmd = new SqlCommand("SP_Registrarcolor", oconexion);
+                    cmd.Parameters.AddWithValue("Color", obj.Color);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -80,7 +81,7 @@ namespace CapaDatos
             return resultado;
         }
 
-        public bool Editar(Categorias obj, out string Mensaje)
+        public bool Editar(Colores obj, out string Mensaje)
         {
             bool Respuesta = false;
             Mensaje = "";
@@ -90,10 +91,10 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_EditarCategoria", oconexion);
-                    
-                    cmd.Parameters.AddWithValue("IdCategoria", obj.Id_categoria);
-                    cmd.Parameters.AddWithValue("Categoria", obj.Categoria);
+                    SqlCommand cmd = new SqlCommand("SP_Editarcolor", oconexion);
+
+                    cmd.Parameters.AddWithValue("IdColor", obj.Id_color);
+                    cmd.Parameters.AddWithValue("Color", obj.Color);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -116,7 +117,7 @@ namespace CapaDatos
             return Respuesta;
         }
 
-        public bool Eliminar(Categorias obj, out string Mensaje)
+        public bool Eliminar(Colores obj, out string Mensaje)
         {
             bool exito = false;
             Mensaje = "";
@@ -125,8 +126,8 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EliminarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("IdCategoria", obj.Id_categoria);
+                    SqlCommand cmd = new SqlCommand("SP_Eliminarcolor", oconexion);
+                    cmd.Parameters.AddWithValue("IdColor", obj.Id_color);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
