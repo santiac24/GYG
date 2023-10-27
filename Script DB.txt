@@ -454,6 +454,225 @@ begin
 	end
 end
 
+
+---procedimientos para los colores-----------------------
+
+CREATE PROC SP_Registrarcolor(
+@Color varchar(30),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as 
+begin 
+	SET @Resultado = 0
+	SET @Mensaje=''
+
+	IF NOT EXISTS (SELECT * FROM COLORES WHERE color = @Color)
+	begin 
+		insert into COLORES(Color) values (@Color)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE 
+		set @Mensaje ='No se puede repetir el color'
+end
+
+go
+
+-- Procedimiento para modificar categoria
+create procedure SP_Editarcolor(
+@IdColor int,
+@Color varchar(30),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	SET @Mensaje=''
+
+	IF NOT EXISTS (select * from COLORES where Color = @Color)
+		update COLORES set
+		Color = @Color
+		where Id_color = @IdColor
+	else
+	begin 
+		set @Resultado = 0
+		set @Mensaje = 'No se puede repetir el color'
+	end
+
+end
+
+go
+
+create procedure SP_Eliminarcolor(
+@IdColor int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Resultado = 1
+	SET @Mensaje=''
+	if not exists (
+		select * from COLORES c
+		inner join PRENDAS p on p.Color_id = c.Id_color
+		where c.Id_color = @IdColor
+	)
+	begin 
+		delete top(1) from COLORES where Id_color = @IdColor
+	end
+	else
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'El color se encuentra relacionada a una prenda'
+	end
+end
+
+---- procedimientos para tallas
+
+--procedimiento para registrar talla
+ALTER PROC SP_Registrartalla(
+@Talla varchar(18),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as 
+begin 
+	SET @Resultado = 0
+	SET @Mensaje=''
+
+	IF NOT EXISTS (SELECT * FROM TALLAS WHERE talla = @Talla)
+	begin 
+		insert into TALLAS(Talla) values (@Talla)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE 
+		set @Mensaje ='No se puede repetir la Talla'
+end
+
+
+-- Procedimiento para modificar talla
+create procedure SP_EditarTalla(
+@IdTalla int,
+@Talla varchar(18),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	SET @Mensaje=''
+
+	IF NOT EXISTS (select * from TALLAS where talla = @Talla)
+		update Tallas set
+		Talla = @Talla
+		where Id_talla = @IdTalla
+	else
+	begin 
+		set @Resultado = 0
+		set @Mensaje = 'No se puede repetir la talla'
+	end
+
+end
+--procedimiento para elimiar talla
+ALTER procedure SP_EliminarTalla(
+@IdTalla int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Resultado = 1
+	SET @Mensaje=''
+	if not exists (
+		select * from tallas t
+		inner join PRENDAS p on p.Talla_id = t.Id_talla
+		where t.Id_talla = @IdTalla
+	)
+	begin 
+		delete top(1) from TALLAS where Id_talla = @IdTalla
+	end
+	else
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'La Talla se encuentra relacionada a una prenda'
+	end
+end
+
+
+--procedimiento para guardar colores
+CREATE PROC SP_Registrarsubcategoria(
+@Subcategoria varchar(50),
+@IdCategoria int,
+@Resultado int output,
+@Mensaje varchar(500) output
+)as 
+begin 
+	SET @Resultado = 0
+	SET @Mensaje=''
+
+	IF NOT EXISTS (SELECT * FROM SUBCATEGORIAS WHERE subcategoria = @Subcategoria)
+	begin 
+		insert into SUBCATEGORIAS(subcategoria,Categoria_id) values (@Subcategoria, @IdCategoria)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE 
+		set @Mensaje ='No se puede repetir la subcategoria'
+end
+
+go
+
+-- Procedimiento para modificar subcategoria-----------------
+
+create procedure SP_Editarsubcategoria(
+@Idsubcategoria int,
+@Subcategoria varchar(50),
+@IdCategoria int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	SET @Mensaje=''
+
+	IF NOT EXISTS (SELECT * FROM SUBCATEGORIAS WHERE subcategoria = @Subcategoria)
+		update SUBCATEGORIAS set
+		subcategoria = @Subcategoria,
+		Categoria_id = @IdCategoria
+		where Id_subcategoria = @Idsubcategoria
+	else
+	begin 
+		set @Resultado = 0
+		set @Mensaje = 'No se puede repetir la subcategoria'
+	end
+
+end
+
+go
+
+create procedure SP_Eliminarsubcategoria(
+@IdSubcategoria int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Resultado = 1
+	SET @Mensaje=''
+	if not exists (
+		select * from SUBCATEGORIAS sc
+		inner join PRENDAS p on p.Subcategoria_id = sc.Id_subcategoria
+		where sc.Id_subcategoria = @IdSubcategoria
+	)
+	begin 
+		delete top(1) from SUBCATEGORIAS where Id_subcategoria = @IdSubcategoria
+	end
+	else
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'La subcategoria se encuentra relacionada a una prenda'
+	end
+end
+
 -- inserts
 
 -- insert roles
