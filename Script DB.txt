@@ -482,3 +482,8 @@ INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
 VALUES 
 ('Jose Rivillas', 'joseale58', abc', 1);
 ('Julián Trump', 'juliancho', 'def', 2);
+
+insert into SUBCATEGORIAS(subcategoria, Categoria_id) values('Blusas',2),('Medias de ositos',3),('Sueter deportivo',4)
+insert into CATEGORIAS(Categoria) values('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
+insert into tallas(Talla) values('S'),('M'),('Xl')
+insert into COLORES(Color) values('Amarillo'),('Rojo'),('Verde')
