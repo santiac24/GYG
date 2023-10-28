@@ -235,31 +235,6 @@ namespace CapaPresentacion
         //----------------------------------------------------
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
-            {
-                int indice = e.RowIndex;
-
-                if (indice >= 0)
-                {
-                    txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
-                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
-                    txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
-                    txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
-                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
-
-                    foreach (OpcionesCombo oc in cbrol.Items)
-                    {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
-                        {
-                            int indice_combo = cbrol.Items.IndexOf(oc);
-                            cbrol.SelectedIndex = indice_combo;
-                            break;
-                        }
-                    }
-
-                }
-            }
         }
 
         private void btnlimpiar_Click(object sender, EventArgs e)
@@ -294,8 +269,6 @@ namespace CapaPresentacion
 
         private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
             dgvdata.CurrentRow.Selected = true;
             if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
             {
@@ -304,18 +277,36 @@ namespace CapaPresentacion
                 if (indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
-                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
-                    txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
-                    txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
-                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id_prenda"].Value.ToString();
+                    txtprenda.Text = dgvdata.Rows[indice].Cells["Prenda"].Value.ToString();
+                    txtcantidaddisponible.Text = dgvdata.Rows[indice].Cells["Cantidad_dispo"].Value.ToString();
+                    txtpreciocompra.Text = dgvdata.Rows[indice].Cells["Precio_compra"].Value.ToString();
+                    txtprecioventa.Text = dgvdata.Rows[indice].Cells["Precio_venta"].Value.ToString();
 
-                    foreach (OpcionesCombo oc in cbrol.Items)
+                    foreach (OpcionesCombo oc in cbsubcategoria.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_subcategoria"].Value))
                         {
-                            int indice_combo = cbrol.Items.IndexOf(oc);
-                            cbrol.SelectedIndex = indice_combo;
+                            int indice_combo = cbsubcategoria.Items.IndexOf(oc);
+                            cbsubcategoria.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                    foreach (OpcionesCombo oc in cbtalla.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_talla"].Value))
+                        {
+                            int indice_combo = cbsubcategoria.Items.IndexOf(oc);
+                            cbtalla.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                    foreach (OpcionesCombo oc in cbcolor.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_color"].Value))
+                        {
+                            int indice_combo = cbsubcategoria.Items.IndexOf(oc);
+                            cbcolor.SelectedIndex = indice_combo;
                             break;
                         }
                     }
