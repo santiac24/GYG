@@ -10,5 +10,8 @@ namespace CapaEntidad
     {
         public int Id_provedor { get; set; }
         public string Provedor { get; set; }
+        public string Telefono { get; set; }
+        public string Correo { get; set; }
+
     }
 }

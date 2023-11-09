@@ -10,9 +10,10 @@ namespace CapaEntidad
     {
         public int Id_cliente { get; set; }
         public string Nombre { get; set; }
-        public int Cedula { get; set; }
+        public string Cedula { get; set; }
+        public string Celular { get; set; }
         public string Direccion { get; set; }
         public string Fecha_nacimiento { get; set; }
-        public Sexos Sexo_id { get; set; }
+        public Sexos o_Sexo { get; set; }
     }
 }

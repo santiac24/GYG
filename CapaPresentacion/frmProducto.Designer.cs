@@ -69,12 +69,13 @@
             this.cbcolor = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnexportar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
             // txtindice
             // 
-            this.txtindice.Location = new System.Drawing.Point(90, 13);
+            this.txtindice.Location = new System.Drawing.Point(90, 40);
             this.txtindice.Name = "txtindice";
             this.txtindice.Size = new System.Drawing.Size(36, 23);
             this.txtindice.TabIndex = 47;
@@ -91,7 +92,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnBuscar.IconSize = 15;
-            this.btnBuscar.Location = new System.Drawing.Point(997, 38);
+            this.btnBuscar.Location = new System.Drawing.Point(982, 66);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(41, 23);
             this.btnBuscar.TabIndex = 45;
@@ -100,7 +101,7 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(802, 38);
+            this.txtbusqueda.Location = new System.Drawing.Point(787, 66);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(165, 23);
             this.txtbusqueda.TabIndex = 44;
@@ -109,7 +110,7 @@
             // 
             this.cbbusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbusqueda.FormattingEnabled = true;
-            this.cbbusqueda.Location = new System.Drawing.Point(596, 38);
+            this.cbbusqueda.Location = new System.Drawing.Point(581, 66);
             this.cbbusqueda.Name = "cbbusqueda";
             this.cbbusqueda.Size = new System.Drawing.Size(200, 23);
             this.cbbusqueda.TabIndex = 43;
@@ -119,7 +120,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(515, 44);
+            this.label9.Location = new System.Drawing.Point(500, 72);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 15);
             this.label9.TabIndex = 42;
@@ -127,7 +128,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(135, 13);
+            this.txtid.Location = new System.Drawing.Point(135, 40);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(36, 23);
             this.txtid.TabIndex = 41;
@@ -140,12 +141,12 @@
             this.label8.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(218, 22);
+            this.label8.Location = new System.Drawing.Point(203, 13);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(2, 7, 0, 0);
-            this.label8.Size = new System.Drawing.Size(1058, 54);
+            this.label8.Size = new System.Drawing.Size(1058, 89);
             this.label8.TabIndex = 40;
-            this.label8.Text = "v";
+            this.label8.Text = "Lista de productos";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btnlimpiarbuscador
@@ -182,7 +183,7 @@
             this.Talla,
             this.Color_id,
             this.Color});
-            this.dgvdata.Location = new System.Drawing.Point(218, 98);
+            this.dgvdata.Location = new System.Drawing.Point(203, 120);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
@@ -426,6 +427,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(197, 581);
             this.label1.TabIndex = 24;
             // 
@@ -492,18 +494,40 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 15;
-            this.iconButton1.Location = new System.Drawing.Point(1044, 38);
+            this.iconButton1.Location = new System.Drawing.Point(1029, 66);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(41, 23);
             this.iconButton1.TabIndex = 54;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // btnexportar
+            // 
+            this.btnexportar.BackColor = System.Drawing.Color.White;
+            this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnexportar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnexportar.ForeColor = System.Drawing.Color.Black;
+            this.btnexportar.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
+            this.btnexportar.IconColor = System.Drawing.Color.Black;
+            this.btnexportar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnexportar.IconSize = 15;
+            this.btnexportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnexportar.Location = new System.Drawing.Point(212, 66);
+            this.btnexportar.Name = "btnexportar";
+            this.btnexportar.Size = new System.Drawing.Size(142, 23);
+            this.btnexportar.TabIndex = 55;
+            this.btnexportar.Text = "Descargar en excel";
+            this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 581);
+            this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.cbcolor);
             this.Controls.Add(this.label11);
@@ -585,5 +609,6 @@
         private ComboBox cbcolor;
         private Label label11;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnexportar;
     }
 }

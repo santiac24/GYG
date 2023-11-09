@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -309,6 +310,62 @@ namespace CapaPresentacion
                             cbcolor.SelectedIndex = indice_combo;
                             break;
                         }
+                    }
+                }
+            }
+        }
+
+        private void btnexportar_Click(object sender, EventArgs e)
+        {
+            if(dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                
+                foreach(DataGridViewColumn columna in dgvdata.Columns)
+                {
+                    if(columna.HeaderText != "" && columna.Visible)
+                    {
+                        dt.Columns.Add(columna.HeaderText,typeof(string));
+                    }
+                }
+                foreach(DataGridViewRow fila in dgvdata.Rows)
+                {
+                    if (fila.Visible)
+                    {
+                        dt.Rows.Add(new object[]
+                        {
+                            fila.Cells[2].Value.ToString(),
+                            fila.Cells[3].Value.ToString(),
+                            fila.Cells[4].Value.ToString(),
+                            fila.Cells[5].Value.ToString(),
+                            fila.Cells[7].Value.ToString(),
+                            fila.Cells[9].Value.ToString(),
+                            fila.Cells[11].Value.ToString()
+                        });
+                    }
+                }
+                SaveFileDialog savefile = new SaveFileDialog(); //Dialogo para ver donde guardar el excel
+                savefile.FileName = string.Format("ReporteProducto_{0}.xlsx",DateTime.Now.ToString("ddMMyyyyHHmmss")); //Se le da un formato para que se guarde el reporte con fecha
+                savefile.Filter = "Excel Files | *.xlsx";  //Para que en la ventana de dialogo solo se muestren archivos xlsx
+
+                if(savefile.ShowDialog() == DialogResult.OK) //Este evento se dispara cuando seleccionamos la ruta donde vamos a guardar
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe"); //Se crea una hoja llamada informe
+                        hoja.ColumnsUsed().AdjustToContents(); //Se ajustan las columnas usadas a la hoja de excel
+                        wb.SaveAs(savefile.FileName); //Se guarda en la ruta seleccionada
+                        MessageBox.Show("Reporte generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }

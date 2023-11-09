@@ -65,7 +65,7 @@ namespace CapaPresentacion
             {
                 dgvdata.Rows.Add(new object[] { "", item.Id_usuario, item.Nombre, item.Usuario, item.Contrasena, item.o_Rol.Id_rol, item.o_Rol.rol });
             }
-        }
+        } 
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -296,6 +296,126 @@ namespace CapaPresentacion
         }
 
         private void frmUsuarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvdata_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmarClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguardar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btneliminar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlimpiarbuscador_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtindice_TextChanged(object sender, EventArgs e)
         {
 
         }

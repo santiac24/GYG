@@ -109,7 +109,7 @@ create table SUBCATEGORIAS(
 -- Tabla de prendas
 create table PRENDAS(
  Id_prenda int primary key identity,
-prenda varchar(500),
+ prenda varchar(500),
  Cantidad_dispo int,
  Precio_compra decimal(10,2),
  Precio_venta decimal(10,2),
@@ -147,7 +147,9 @@ create table DETALLE_VENTAS(
 -- Tabla de provedores
 create table PROVEDORES(
  Id_provedor int primary key identity,
- Provedor varchar(50)
+ Provedor varchar(50),
+ Telefonos varchar(14),
+ Correo varchar(50)
 )
 
  GO
@@ -673,6 +675,151 @@ begin
 	end
 end
 
+
+-- PROCEDIMIENTOS PARA CLIENTES -----------------------
+CREATE PROC sp_RegistrarCliente(
+@Nombre varchar(50),
+@Cedula varchar(14),
+@Celular varchar(14),
+@Direccion varchar(40),
+@Fecha_nacimiento datetime,
+@Sexo_id int,
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 0
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT * FROM CLIENTES WHERE Cedula = @Cedula)
+	begin
+		insert into CLIENTES(Nombre, Cedula, Celular, Direccion, Fecha_nacimiento, Sexo_id) values(
+		@Nombre, @Cedula, @Celular, @Direccion, @Fecha_nacimiento, @Sexo_id)
+
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'El número de cedula ingresado ya existe'
+end
+
+GO
+
+CREATE PROC sp_ModificarCliente(
+@Id_cliente int,
+@Nombre varchar(50),
+@Cedula varchar(14),
+@Celular varchar(14),
+@Direccion varchar(40),
+@Fecha_nacimiento datetime,
+@Sexo_id int,
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 1
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT * FROM CLIENTES WHERE Cedula = @Cedula and Id_cliente != @Id_Cliente)
+	begin
+		update CLIENTES set
+		Nombre = @Nombre,
+		Cedula = @Cedula,
+		Celular = @Celular,
+		Direccion = @Direccion,
+		Fecha_nacimiento = @Fecha_nacimiento,
+		Sexo_id = @Sexo_id
+		where Id_cliente = @Id_cliente
+	end
+	else
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'El número de documento ya existe'
+	end
+end
+
+GO
+
+--------- Procedimientos para proveedores----------
+create PROC sp_RegistrarProvedor(
+@Provedor varchar(50),
+@Telefono varchar(14),
+@Correo varchar(20),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado  = 0
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT * FROM PROVEDORES WHERE Provedor = @Provedor)
+	begin
+		insert into PROVEDORES(Provedor, Telefono, Correo)
+		values (
+		@Provedor,
+		@Telefono,
+		@Correo
+		)
+
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'El proveedor ya existe.'
+end
+
+GO
+
+create PROC sp_ModificarProvedor(
+@Id_provedor int,
+@Provedor varchar(50),
+@Telefono varchar(14),
+@Correo varchar(20),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 1
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT * FROM PROVEDORES WHERE Provedor = @Provedor and Id_provedor != @Id_provedor)
+	begin
+		update PROVEDORES set
+		Provedor = @Provedor,
+		Telefono = @Telefono,
+		Correo = @Correo
+		where Id_provedor = @Id_provedor
+	end
+	else
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'El proveedor ya existe'
+	end
+end
+
+GO
+
+create procedure sp_EliminarProvedor(
+@Id_provedor int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (
+		select * from PROVEDORES p
+		inner join COMPRAS c on p.Id_provedor = c.Provedor_id
+		where p.Id_provedor = @Id_provedor
+		)
+	begin
+		delete top (1) from PROVEDORES where Id_provedor = @Id_provedor
+	end
+	else
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'No se puede eliminar el proveedor porque se encuentra relacionado a una compra.'
+	end
+end
+
+GO
+
+
+
 -- inserts
 
 -- insert roles
@@ -706,3 +853,16 @@ insert into SUBCATEGORIAS(subcategoria, Categoria_id) values('Blusas',2),('Media
 insert into CATEGORIAS(Categoria) values('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
 insert into tallas(Talla) values('S'),('M'),('Xl')
 insert into COLORES(Color) values('Amarillo'),('Rojo'),('Verde')
+
+INSERT INTO SEXOS(Sexo)
+VALUES
+('Masculino'),
+('FEMENINO')
+
+-- Correcciones
+ALTER TABLE PROVEDORES
+ADD Telefono varchar(14);
+
+ALTER TABLE PROVEDORES
+ADD Correo varchar(50);
+

@@ -71,6 +71,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 476);
             this.label1.TabIndex = 0;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -82,6 +83,7 @@
             this.label2.Size = new System.Drawing.Size(110, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre de Usuario";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -92,6 +94,7 @@
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // txtNombreUsuario
             // 
@@ -99,6 +102,7 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(155, 23);
             this.txtNombreUsuario.TabIndex = 3;
+            this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // txtClave
             // 
@@ -107,6 +111,7 @@
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(155, 23);
             this.txtClave.TabIndex = 4;
+            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             // 
             // label4
             // 
@@ -118,6 +123,7 @@
             this.label4.Size = new System.Drawing.Size(107, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nombre Completo";
+            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // txtNombreCompleto
             // 
@@ -125,6 +131,7 @@
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(155, 23);
             this.txtNombreCompleto.TabIndex = 6;
+            this.txtNombreCompleto.TextChanged += new System.EventHandler(this.txtNombreCompleto_TextChanged);
             // 
             // label5
             // 
@@ -135,6 +142,7 @@
             this.label5.Size = new System.Drawing.Size(24, 15);
             this.label5.TabIndex = 7;
             this.label5.Text = "Rol";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -145,6 +153,7 @@
             this.label6.Size = new System.Drawing.Size(124, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "Confirmar Contraseña";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtConfirmarClave
             // 
@@ -153,6 +162,7 @@
             this.txtConfirmarClave.PasswordChar = '*';
             this.txtConfirmarClave.Size = new System.Drawing.Size(155, 23);
             this.txtConfirmarClave.TabIndex = 9;
+            this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // cbrol
             // 
@@ -162,6 +172,7 @@
             this.cbrol.Name = "cbrol";
             this.cbrol.Size = new System.Drawing.Size(152, 23);
             this.cbrol.TabIndex = 10;
+            this.cbrol.SelectedIndexChanged += new System.EventHandler(this.cbrol_SelectedIndexChanged);
             // 
             // btnguardar
             // 
@@ -179,6 +190,7 @@
             this.btnguardar.TabIndex = 11;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
             // 
             // btnlimpiar
             // 
@@ -196,6 +208,7 @@
             this.btnlimpiar.TabIndex = 12;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click_1);
             // 
             // btneliminar
             // 
@@ -213,6 +226,7 @@
             this.btneliminar.TabIndex = 13;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click_1);
             // 
             // label7
             // 
@@ -225,6 +239,7 @@
             this.label7.Size = new System.Drawing.Size(84, 28);
             this.label7.TabIndex = 14;
             this.label7.Text = "Usuario";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // dgvdata
             // 
@@ -245,6 +260,7 @@
             this.dgvdata.RowTemplate.Height = 25;
             this.dgvdata.Size = new System.Drawing.Size(871, 390);
             this.dgvdata.TabIndex = 15;
+            this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick_1);
             // 
             // seleccion
             // 
@@ -311,6 +327,7 @@
             this.label8.Size = new System.Drawing.Size(871, 54);
             this.label8.TabIndex = 16;
             this.label8.Text = "Usuarios registrados";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtid
             // 
@@ -319,6 +336,7 @@
             this.txtid.Size = new System.Drawing.Size(36, 23);
             this.txtid.TabIndex = 17;
             this.txtid.Text = "0";
+            this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
             // 
             // label9
             // 
@@ -330,6 +348,7 @@
             this.label9.Size = new System.Drawing.Size(66, 15);
             this.label9.TabIndex = 18;
             this.label9.Text = "Buscar por:";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // cbbusqueda
             // 
@@ -339,6 +358,7 @@
             this.cbbusqueda.Name = "cbbusqueda";
             this.cbbusqueda.Size = new System.Drawing.Size(200, 23);
             this.cbbusqueda.TabIndex = 19;
+            this.cbbusqueda.SelectedIndexChanged += new System.EventHandler(this.cbbusqueda_SelectedIndexChanged);
             // 
             // txtbusqueda
             // 
@@ -346,6 +366,7 @@
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(165, 23);
             this.txtbusqueda.TabIndex = 20;
+            this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
             // 
             // btnBuscar
             // 
@@ -363,6 +384,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(41, 23);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // btnlimpiarbuscador
             // 
@@ -380,6 +402,7 @@
             this.btnlimpiarbuscador.Size = new System.Drawing.Size(41, 23);
             this.btnlimpiarbuscador.TabIndex = 22;
             this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
+            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click_1);
             // 
             // txtindice
             // 
@@ -388,13 +411,14 @@
             this.txtindice.Size = new System.Drawing.Size(36, 23);
             this.txtindice.TabIndex = 23;
             this.txtindice.Text = "0";
+            this.txtindice.TextChanged += new System.EventHandler(this.txtindice_TextChanged);
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1028, 476);
+            this.ClientSize = new System.Drawing.Size(1074, 476);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.btnlimpiarbuscador);
             this.Controls.Add(this.btnBuscar);
@@ -420,7 +444,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
