@@ -866,3 +866,6 @@ ADD Telefono varchar(14);
 ALTER TABLE PROVEDORES
 ADD Correo varchar(50);
 
+ALTER TABLE COMPRAS
+ADD Provedor_id int references PROVEDORES(Id_provedor);
+
