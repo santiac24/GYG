@@ -13,7 +13,7 @@ namespace CapaEntidad
         public string Cedula { get; set; }
         public string Celular { get; set; }
         public string Direccion { get; set; }
-        public string Fecha_nacimiento { get; set; }
+        public DateTime Fecha_nacimiento { get; set; }
         public Sexos o_Sexo { get; set; }
     }
 }

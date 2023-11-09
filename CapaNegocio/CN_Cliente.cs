@@ -24,27 +24,27 @@ namespace CapaNegocio
 
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el nombre del cliente.";
+                Mensaje += "Es necesario el nombre del cliente.\n";
             }
 
             if (obj.Cedula == "")
             {
-                Mensaje += "Es necesario el número de celula del cliente para identificar.";
+                Mensaje += "Es necesario el número de celula del cliente para identificar.\n";
             }
 
             if (obj.Celular == "")
             {
-                Mensaje += "Es necesario el celular del cliente.";
+                Mensaje += "Es necesario el celular del cliente.\n";
             }
 
             if (obj.Direccion == "")
             {
-                Mensaje += "Es necesario poner la dirección del cliente.";
+                Mensaje += "Es necesario poner la dirección del cliente.\n";
             }
 
             if (obj.o_Sexo.Id_sexo == 0)
             {
-                Mensaje += "Es necesario poner el sexo del cliente.";
+                Mensaje += "Es necesario poner el sexo del cliente.\n";
             }
 
             //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
@@ -64,27 +64,27 @@ namespace CapaNegocio
             Mensaje = "";
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el nombre del cliente";
+                Mensaje += "Es necesario el nombre del cliente\n";
             }
 
             if (obj.Cedula == "")
             {
-                Mensaje += "Es necesario el número de celula del cliente para identificar.";
+                Mensaje += "Es necesario el número de celula del cliente para identificar.\n";
             }
 
             if (obj.Celular == "")
             {
-                Mensaje += "Es necesario el celular del cliente.";
+                Mensaje += "Es necesario el celular del cliente.\n";
             }
 
             if (obj.Direccion == "")
             {
-                Mensaje += "Es necesario poner la dirección del cliente.";
+                Mensaje += "Es necesario poner la dirección del cliente.\n";
             }
 
             if (obj.o_Sexo.Id_sexo == 0)
             {
-                Mensaje += "Es necesario poner el sexo del cliente.";
+                Mensaje += "Es necesario poner el sexo del cliente.\n";
             }
 
             //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar

@@ -24,17 +24,17 @@ namespace CapaNegocio
 
             if (obj.Provedor == "")
             {
-                Mensaje += "Es necesario el nombre del Proveedor";
+                Mensaje += "Es necesario el nombre del proveedor\n";
             }
 
             if (obj.Telefono == "")
             {
-                Mensaje += "Es necesario el telefono del proveedor";
+                Mensaje += "Es necesario el telefono del proveedor\n";
             }
 
             if (obj.Correo == "")
             {
-                Mensaje += "Es necesario el correo del proveedor";
+                Mensaje += "Es necesario el correo del proveedor\n";
             }
 
             //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar

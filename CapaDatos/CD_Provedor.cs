@@ -62,9 +62,14 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Provedor", obj.Provedor);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
-                    cmd.Parameters.Add("IdProvedorResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
+                    SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Int);
+                    resultadoParam.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(resultadoParam);
+
+                    SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500);
+                    mensajeParam.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(mensajeParam);
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -72,8 +77,8 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    idProvedorgenerado = Convert.ToInt32(cmd.Parameters["IdProvedorResultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    idProvedorgenerado = Convert.ToInt32(resultadoParam.Value);
+                    Mensaje = mensajeParam.Value.ToString();
                 }
 
             }

@@ -37,7 +37,7 @@ namespace CapaDatos
                                 Cedula = dr["Cedula"].ToString(),
                                 Celular = dr["Celular"].ToString(),
                                 Direccion = dr["Direccion"].ToString(),
-                                Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
+                                Fecha_nacimiento = Convert.ToDateTime(dr["Fecha_nacimiento"]),
                                 o_Sexo = new Sexos()
                                 {
                                     Id_sexo = Convert.ToInt32(dr["Id_sexo"]),

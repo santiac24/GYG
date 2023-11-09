@@ -147,7 +147,7 @@ namespace CapaPresentacion
                 {
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["Id_provedor"].Value.ToString();
-                    txtNombre.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
+                    txtNombre.Text = dgvdata.Rows[indice].Cells["Provedor"].Value.ToString();
                     txtTelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
                     txtCorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                 }

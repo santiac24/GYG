@@ -142,7 +142,7 @@ namespace CapaPresentacion
                 Cedula = txtCedula.Text,
                 Celular = txtCelular.Text,
                 Direccion = txtDireccion.Text,
-                Fecha_nacimiento = txtFechaNacimiento.Text,
+                Fecha_nacimiento = dateTimePicker1.Value,
                 o_Sexo = new Sexos()
                 {
                     Id_sexo = Convert.ToInt32(((OpcionesCombo)cbsexo.SelectedItem).Valor)
