@@ -234,3 +234,9 @@ C:\Users\santi\Desktop\GYG\CapaPresentacion\bin\Debug\net6.0-windows\ExcelNumber
 C:\Users\santi\Desktop\GYG\CapaPresentacion\bin\Debug\net6.0-windows\Irony.dll
 C:\Users\santi\Desktop\GYG\CapaPresentacion\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
 C:\Users\santi\Desktop\GYG\CapaPresentacion\bin\Debug\net6.0-windows\XLParser.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\ClosedXML.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\Irony.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\Users\Jose\Desktop\Universidad este Semestre\sistemas_empresarial\GYG\CapaPresentacion\bin\Debug\net6.0-windows\XLParser.dll
