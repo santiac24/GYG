@@ -566,7 +566,7 @@ begin
 
 end
 --procedimiento para elimiar talla
-ALTER procedure SP_EliminarTalla(
+create procedure SP_EliminarTalla(
 @IdTalla int,
 @Resultado bit output,
 @Mensaje varchar(500) output
