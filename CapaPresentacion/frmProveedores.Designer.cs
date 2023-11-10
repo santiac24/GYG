@@ -316,6 +316,7 @@
             dgvdata.RowTemplate.Height = 25;
             dgvdata.Size = new Size(857, 390);
             dgvdata.TabIndex = 66;
+            dgvdata.CellClick += dgvdata_CellClick;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
             // 

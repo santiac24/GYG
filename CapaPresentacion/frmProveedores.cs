@@ -138,7 +138,8 @@ namespace CapaPresentacion
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+
             dgvdata.CurrentRow.Selected = true;
             if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
             {
@@ -146,7 +147,8 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    txtid.Text = dgvdata.Rows[indice].Cells["Id_provedor"].Value.ToString();
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
                     txtNombre.Text = dgvdata.Rows[indice].Cells["Provedor"].Value.ToString();
                     txtTelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
                     txtCorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
@@ -209,6 +211,24 @@ namespace CapaPresentacion
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvdata.CurrentRow.Selected = true;
+            if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
+                    txtNombre.Text = dgvdata.Rows[indice].Cells["Provedor"].Value.ToString();
+                    txtTelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
+                    txtCorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
+                }
+            }
         }
     }
 }
