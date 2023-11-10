@@ -682,7 +682,7 @@ end
 
 -- PROCEDIMIENTOS PARA CLIENTES -----------------------
 
-CREATE PROC sp_RegistrarCliente(
+CREATE PROC SP_RegistrarCliente(
 @Nombre varchar(50),
 @Cedula varchar(14),
 @Celular varchar(14),
@@ -708,7 +708,7 @@ end
 
 GO
 
-CREATE PROC sp_ModificarCliente(
+CREATE PROC SP_ModificarCliente(
 @Id_cliente int,
 @Nombre varchar(50),
 @Cedula varchar(14),
