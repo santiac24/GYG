@@ -31,15 +31,6 @@ create table USUARIOS(
  Contrasena varchar(50),
  Rol_id int references ROLES(Id_rol)
 )
-
--- Tabla de usuarios
-create table USUARIOS(
- Id_usuario int primary key identity,
- NombreUsuario varchar(50),
- Contrasena varchar(50),
- Rol_id int references ROLES(Id_rol)
-)
-
  GO
 
 -- Tabla de sexos
