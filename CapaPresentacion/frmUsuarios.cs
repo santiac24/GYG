@@ -27,7 +27,6 @@ namespace CapaPresentacion
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-
             //Para agregar al Combobox de roles, los roles posibles
             //Traemos todos los roles y los guardamos en una lista
             List<Roles> listaRol = new CN_Rol().Listar();
@@ -65,7 +64,7 @@ namespace CapaPresentacion
             {
                 dgvdata.Rows.Add(new object[] { "", item.Id_usuario, item.Nombre, item.Usuario, item.Contrasena, item.o_Rol.Id_rol, item.o_Rol.rol });
             }
-        } 
+        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -269,7 +268,7 @@ namespace CapaPresentacion
         {
 
             dgvdata.CurrentRow.Selected = true;
-            if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
+            if (dgvdata.Columns[e.ColumnIndex].Name == "Nombre")
             {
                 int indice = e.RowIndex;
 
@@ -296,11 +295,6 @@ namespace CapaPresentacion
         }
 
         private void frmUsuarios_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvdata_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -355,21 +349,6 @@ namespace CapaPresentacion
 
         }
 
-        private void btnguardar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnlimpiar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btneliminar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label7_Click_1(object sender, EventArgs e)
         {
 
@@ -405,17 +384,17 @@ namespace CapaPresentacion
 
         }
 
-        private void btnBuscar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnlimpiarbuscador_Click_1(object sender, EventArgs e)
         {
 
         }
 
         private void txtindice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
 
         }
