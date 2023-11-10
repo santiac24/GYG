@@ -268,31 +268,31 @@ namespace CapaPresentacion
         private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            dgvdata.CurrentRow.Selected = true;
-            if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
-            {
-                int indice = e.RowIndex;
-
-                if (indice >= 0)
-                {
-                    txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
-                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
-                    txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
-                    txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
-                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
-
-                    foreach (OpcionesCombo oc in cbrol.Items)
-                    {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
-                        {
-                            int indice_combo = cbrol.Items.IndexOf(oc);
-                            cbrol.SelectedIndex = indice_combo;
-                            break;
-                        }
-                    }
-                }
-            }
+            //dgvdata.CurrentRow.Selected = true;
+            //if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
+            //{
+            //    int indice = e.RowIndex;
+            //
+            //   if (indice >= 0)
+            //    {
+            //      txtindice.Text = indice.ToString();
+            //        txtid.Text = dgvdata.Rows[indice].Cells["IdUsuario"].Value.ToString();
+            //        txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
+            //        txtNombreUsuario.Text = dgvdata.Rows[indice].Cells["Usuario"].Value.ToString();
+            //        txtClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+            //        txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Contrasena"].Value.ToString();
+//
+            //        foreach (OpcionesCombo oc in cbrol.Items)
+            //      {
+            //            if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
+            //          {
+            //                int indice_combo = cbrol.Items.IndexOf(oc);
+            //                cbrol.SelectedIndex = indice_combo;
+            //                break;
+            //           }
+            //        }
+            //   }
+            //}
         }
 
         private void frmUsuarios_Load_1(object sender, EventArgs e)

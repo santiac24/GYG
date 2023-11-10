@@ -125,7 +125,7 @@ namespace CapaPresentacion
             //Recorremos cada uno de los elementos de la lista para agregarlos en el combo box
             foreach (Clientes item in listaClientes)
             {
-                dgvdata.Rows.Add(new object[] { "", item.Id_cliente, item.Nombre, item.Cedula, item.Celular,item.Direccion, item.Fecha_nacimiento, item.o_Sexo.Id_sexo, item.o_Sexo.Sexo,
+                dgvdata.Rows.Add(new object[] { "", item.Id_cliente, item.Nombre, item.Cedula, item.Celular,item.Direccion, //item.Fecha_nacimiento, item.o_Sexo.Id_sexo, item.o_Sexo.Sexo,
                 });
             }
 
@@ -154,7 +154,7 @@ namespace CapaPresentacion
 
                 if (idclientegenerado != 0)
                 {
-                    dgvdata.Rows.Add(new object[] { "", txtid.Text, txtNombreCompleto.Text, txtCedula.Text, txtCelular.Text, ((OpcionesCombo)cbsexo.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbsexo.SelectedItem).Texto.ToString() });
+                    dgvdata.Rows.Add(new object[] { "", txtid.Text, txtNombreCompleto.Text, txtCedula.Text, txtCelular.Text, txtDireccion.Text, ((OpcionesCombo)cbsexo.SelectedItem).Valor.ToString(), ((OpcionesCombo)cbsexo.SelectedItem).Texto.ToString() });
                 }
                 else
                 {
@@ -173,7 +173,7 @@ namespace CapaPresentacion
                     row.Cells["Nombre"].Value = txtNombreCompleto.Text;
                     row.Cells["Cedula"].Value = txtCedula.Text;
                     row.Cells["Celular"].Value = txtCelular.Text;
-                    row.Cells["Direccion"].Value = txtFechaNacimiento.Text;
+                    row.Cells["Direccion"].Value = txtDireccion.Text;
                     row.Cells["Fecha_nacimiento"].Value = txtFechaNacimiento.Text;
                     row.Cells["Id_sexo"].Value = ((OpcionesCombo)cbsexo.SelectedItem).Valor.ToString();
                     row.Cells["Sexo"].Value = ((OpcionesCombo)cbsexo.SelectedItem).Texto.ToString();
