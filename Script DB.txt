@@ -31,15 +31,6 @@ create table USUARIOS(
  Contrasena varchar(50),
  Rol_id int references ROLES(Id_rol)
 )
-
--- Tabla de usuarios
-create table USUARIOS(
- Id_usuario int primary key identity,
- NombreUsuario varchar(50),
- Contrasena varchar(50),
- Rol_id int references ROLES(Id_rol)
-)
-
  GO
 
 -- Tabla de sexos
@@ -290,7 +281,7 @@ begin
 	END
 END
 
----- procedimientos para categorias ----
+---- PROCEDIMIENTO PARA CATEGORÍAS ----
 
 --procedimiento para guardar categoria
 CREATE PROC SP_Registrarcategoria(
@@ -364,6 +355,7 @@ begin
 end
 
 --- PROCEDIMIENTOS PARA PRODUCTOS -----
+
 CREATE PROC SP_Registrarprenda(
 @Prenda varchar(500),
 @Subcategoria_id int,
@@ -457,7 +449,7 @@ begin
 end
 
 
----procedimientos para los colores-----------------------
+---PROCEDIMIENTO PARA COLORES-----------------------
 
 CREATE PROC SP_Registrarcolor(
 @Color varchar(30),
@@ -479,7 +471,8 @@ end
 
 go
 
--- Procedimiento para modificar categoria
+-- Procedimiento para modificar color
+
 create procedure SP_Editarcolor(
 @IdColor int,
 @Color varchar(30),
@@ -505,6 +498,8 @@ end
 
 go
 
+-- Procedimiento para eliminar color
+
 create procedure SP_Eliminarcolor(
 @IdColor int,
 @Resultado bit output,
@@ -529,10 +524,11 @@ begin
 	end
 end
 
----- procedimientos para tallas
+---- PROCEDIMIENTO PARA TALLAS
 
 --procedimiento para registrar talla
-ALTER PROC SP_Registrartalla(
+
+ create procedure SP_Registrartalla(
 @Talla varchar(18),
 @Resultado int output,
 @Mensaje varchar(500) output
@@ -552,6 +548,7 @@ end
 
 
 -- Procedimiento para modificar talla
+
 create procedure SP_EditarTalla(
 @IdTalla int,
 @Talla varchar(18),
@@ -574,8 +571,10 @@ begin
 	end
 
 end
+
 --procedimiento para elimiar talla
-ALTER procedure SP_EliminarTalla(
+
+create procedure SP_EliminarTalla(
 @IdTalla int,
 @Resultado bit output,
 @Mensaje varchar(500) output
@@ -600,7 +599,10 @@ begin
 end
 
 
---procedimiento para guardar colores
+-- PROCEDIMIENTO PARA SUBCATEGORÍAS
+
+-- procedimiento para guardar subcategoría
+
 CREATE PROC SP_Registrarsubcategoria(
 @Subcategoria varchar(50),
 @IdCategoria int,
@@ -622,7 +624,7 @@ end
 
 go
 
--- Procedimiento para modificar subcategoria-----------------
+-- Procedimiento para modificar subcategoria 
 
 create procedure SP_Editarsubcategoria(
 @Idsubcategoria int,
@@ -651,6 +653,8 @@ end
 
 go
 
+-- Procedimiento para eliminar subcategoría
+
 create procedure SP_Eliminarsubcategoria(
 @IdSubcategoria int,
 @Resultado bit output,
@@ -677,6 +681,7 @@ end
 
 
 -- PROCEDIMIENTOS PARA CLIENTES -----------------------
+
 CREATE PROC sp_RegistrarCliente(
 @Nombre varchar(50),
 @Cedula varchar(14),
@@ -737,8 +742,9 @@ end
 
 GO
 
---------- Procedimientos para proveedores----------
-create PROC sp_RegistrarProvedor(
+--------- PROCEDIMIENTOS PARA PROVEEDORES ----------
+
+create PROC SP_RegistrarProvedor(
 @Provedor varchar(50),
 @Telefono varchar(14),
 @Correo varchar(20),
@@ -765,7 +771,7 @@ end
 
 GO
 
-create PROC sp_ModificarProvedor(
+create PROC SP_ModificarProvedor(
 @Id_provedor int,
 @Provedor varchar(50),
 @Telefono varchar(14),
@@ -793,7 +799,7 @@ end
 
 GO
 
-create procedure sp_EliminarProvedor(
+create procedure SP_EliminarProvedor(
 @Id_provedor int,
 @Resultado bit output,
 @Mensaje varchar(500) output
@@ -820,7 +826,7 @@ GO
 
 
 
--- inserts
+-- INSERTS
 
 -- insert roles
 insert into roles (rol) values
@@ -844,20 +850,14 @@ INSERT INTO PERMISOS(Rol_id, NombreMenu) values
 (2, 'menuproveedores'),
 (2, 'menuacercade')
 
-INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id)
-VALUES 
-('Jose Rivillas', 'joseale58', abc', 1);
-('Julián Trump', 'juliancho', 'def', 2);
+INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id) VALUES ('Jose Rivillas', 'joseale58', abc', 1); ('Julián Trump', 'juliancho', 'def', 2);
 
-insert into SUBCATEGORIAS(subcategoria, Categoria_id) values('Blusas',2),('Medias de ositos',3),('Sueter deportivo',4)
-insert into CATEGORIAS(Categoria) values('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
-insert into tallas(Talla) values('S'),('M'),('Xl')
-insert into COLORES(Color) values('Amarillo'),('Rojo'),('Verde')
+INSERT INTO SUBCATEGORIAS(subcategoria, Categoria_id) VALUES ('Blusas',1),('Medias de ositos',2),('Sueter deportivo',3)
+INSERT INTO CATEGORIAS(Categoria) VALUES ('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
+INSERT INTO TALLAS(Talla) VALUES ('S'),('M'),('Xl')
+INSERT INTO COLORES(Color) VALUES ('Amarillo'),('Rojo'),('Verde')
 
-INSERT INTO SEXOS(Sexo)
-VALUES
-('Masculino'),
-('FEMENINO')
+INSERT INTO SEXOS(Sexo) VALUES ('Masculino'), ('Femenino')
 
 -- Correcciones
 ALTER TABLE PROVEDORES

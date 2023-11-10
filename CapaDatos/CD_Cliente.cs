@@ -69,7 +69,7 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_RegistrarCliente", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_RegistrarCliente", oconexion);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Cedula", obj.Cedula);
                     cmd.Parameters.AddWithValue("Celular", obj.Celular);
@@ -109,7 +109,7 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_ModificarCliente", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_ModificarCliente", oconexion);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Cedula", obj.Cedula);
                     cmd.Parameters.AddWithValue("Celular", obj.Celular);
