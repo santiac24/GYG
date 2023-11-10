@@ -523,7 +523,7 @@ end
 ---- procedimientos para tallas
 
 --procedimiento para registrar talla
-ALTER PROC SP_Registrartalla(
+ create procedure SP_Registrartalla(
 @Talla varchar(18),
 @Resultado int output,
 @Mensaje varchar(500) output
