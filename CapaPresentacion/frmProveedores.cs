@@ -138,6 +138,7 @@ namespace CapaPresentacion
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             dgvdata.CurrentRow.Selected = true;
             if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
             {
@@ -145,7 +146,6 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["Id_provedor"].Value.ToString();
                     txtNombre.Text = dgvdata.Rows[indice].Cells["Provedor"].Value.ToString();
                     txtTelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();

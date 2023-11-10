@@ -29,7 +29,7 @@ namespace CapaNegocio
 
             if (obj.Cedula == "")
             {
-                Mensaje += "Es necesario el número de celula del cliente para identificar.\n";
+                Mensaje += "Es necesario el número de cedula del cliente para identificar.\n";
             }
 
             if (obj.Celular == "")
@@ -40,11 +40,6 @@ namespace CapaNegocio
             if (obj.Direccion == "")
             {
                 Mensaje += "Es necesario poner la dirección del cliente.\n";
-            }
-
-            if (obj.o_Sexo.Id_sexo == 0)
-            {
-                Mensaje += "Es necesario poner el sexo del cliente.\n";
             }
 
             //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
@@ -64,12 +59,12 @@ namespace CapaNegocio
             Mensaje = "";
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el nombre del cliente\n";
+                Mensaje += "Es necesario el nombre del cliente.\n";
             }
 
             if (obj.Cedula == "")
             {
-                Mensaje += "Es necesario el número de celula del cliente para identificar.\n";
+                Mensaje += "Es necesario el número de cedula del cliente para identificar.\n";
             }
 
             if (obj.Celular == "")
@@ -81,12 +76,6 @@ namespace CapaNegocio
             {
                 Mensaje += "Es necesario poner la dirección del cliente.\n";
             }
-
-            if (obj.o_Sexo.Id_sexo == 0)
-            {
-                Mensaje += "Es necesario poner el sexo del cliente.\n";
-            }
-
             //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
             if (Mensaje != "")
             {

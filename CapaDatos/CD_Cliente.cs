@@ -37,12 +37,12 @@ namespace CapaDatos
                                 Cedula = dr["Cedula"].ToString(),
                                 Celular = dr["Celular"].ToString(),
                                 Direccion = dr["Direccion"].ToString(),
-                                Fecha_nacimiento = Convert.ToDateTime(dr["Fecha_nacimiento"]),
-                                o_Sexo = new Sexos()
-                                {
-                                    Id_sexo = Convert.ToInt32(dr["Id_sexo"]),
-                                    Sexo = dr["Sexo"].ToString()
-                                }
+                                //Fecha_nacimiento = Convert.ToDateTime(dr["Fecha_nacimiento"]),
+                                //o_Sexo = new Sexos()
+                                //{
+                                //    Id_sexo = Convert.ToInt32(dr["Id_sexo"]),
+                                //    Sexo = dr["Sexo"].ToString()
+                                //}
                             };
                             lista.Add(cliente);
                         }
@@ -83,7 +83,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
+                    
                     cmd.ExecuteNonQuery();
 
                     idClientegenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
