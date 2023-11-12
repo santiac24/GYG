@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Jose\\.nuget\\packages\\": {}
+    "C:\\Users\\santi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+      "projectUniqueName": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj",
       "projectName": "CapaEntidad",
-      "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj",
-      "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\obj\\",
+      "projectPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
