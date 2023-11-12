@@ -137,8 +137,8 @@ namespace CapaPresentacion
                 Id_prenda = Convert.ToInt32(txtid.Text),
                 Prenda = txtprenda.Text,
                 Cantidad_dispo = Convert.ToInt32(txtcantidaddisponible.Text),
-                Precio_compra = Convert.ToInt32(txtpreciocompra.Text),
-                Precio_venta = Convert.ToInt32(txtprecioventa.Text),
+                Precio_compra = Convert.ToDecimal(txtpreciocompra.Text),
+                Precio_venta = Convert.ToDecimal(txtprecioventa.Text),
                 Subcategoria_id = new SubCategorias()
                 {
                     Id_subcategoria = Convert.ToInt32(((OpcionesCombo)cbsubcategoria.SelectedItem).Valor)
@@ -150,7 +150,7 @@ namespace CapaPresentacion
                 Color_id = new Colores()
                 {
                     Id_color = Convert.ToInt32(((OpcionesCombo)cbcolor.SelectedItem).Valor)
-                },
+                }
 
             };
             if (obj.Id_prenda == 0)
@@ -176,9 +176,9 @@ namespace CapaPresentacion
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];//fila seleccionada
                     row.Cells["Id_prenda"].Value = txtid.Text;
                     row.Cells["Prenda"].Value = txtprenda.Text;
-                    row.Cells["Disponible"].Value = txtcantidaddisponible.Text;
-                    row.Cells["Precio compra"].Value = txtpreciocompra.Text;
-                    row.Cells["Precio venta"].Value = txtprecioventa.Text;
+                    row.Cells["Cantidad_dispo"].Value = txtcantidaddisponible.Text;
+                    row.Cells["Precio_compra"].Value = txtpreciocompra.Text;
+                    row.Cells["Precio_venta"].Value = txtprecioventa.Text;
 
                     row.Cells["Subcategoria_id"].Value = ((OpcionesCombo)cbsubcategoria.SelectedItem).Valor.ToString();
                     row.Cells["Subcategoria"].Value = ((OpcionesCombo)cbsubcategoria.SelectedItem).Texto.ToString();
@@ -286,7 +286,7 @@ namespace CapaPresentacion
 
                     foreach (OpcionesCombo oc in cbsubcategoria.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_subcategoria"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Subcategoria_id"].Value))
                         {
                             int indice_combo = cbsubcategoria.Items.IndexOf(oc);
                             cbsubcategoria.SelectedIndex = indice_combo;
@@ -295,18 +295,18 @@ namespace CapaPresentacion
                     }
                     foreach (OpcionesCombo oc in cbtalla.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_talla"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Talla_id"].Value))
                         {
-                            int indice_combo = cbsubcategoria.Items.IndexOf(oc);
+                            int indice_combo = cbtalla.Items.IndexOf(oc);
                             cbtalla.SelectedIndex = indice_combo;
                             break;
                         }
                     }
                     foreach (OpcionesCombo oc in cbcolor.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_color"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Color_id"].Value))
                         {
-                            int indice_combo = cbsubcategoria.Items.IndexOf(oc);
+                            int indice_combo = cbcolor.Items.IndexOf(oc);
                             cbcolor.SelectedIndex = indice_combo;
                             break;
                         }

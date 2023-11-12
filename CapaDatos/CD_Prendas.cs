@@ -112,7 +112,7 @@ namespace CapaDatos
 
         public bool Editar(Prendas obj, out string Mensaje)
         {
-            bool Respuesta = false;
+            bool Resultado = false;
             Mensaje = "";
 
             try
@@ -128,7 +128,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Cantidad_dispo", obj.Cantidad_dispo);
                     cmd.Parameters.AddWithValue("Precio_compra", obj.Precio_compra);
                     cmd.Parameters.AddWithValue("Precio_venta", obj.Precio_venta);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -137,18 +137,18 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    Respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
 
             }
             catch (Exception ex)
             {
-                Respuesta = false;
+                Resultado = false;
                 Mensaje = ex.Message;
             }
 
-            return Respuesta;
+            return Resultado;
         }
 
         public bool Eliminar(Prendas obj, out string Mensaje)
