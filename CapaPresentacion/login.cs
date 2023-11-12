@@ -60,7 +60,6 @@ namespace CapaPresentacion
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
-            List<Usuarios> TEST = new CN_Usuario().Listar();
             Usuarios ousuario = new CN_Usuario().Listar().Where(u => u.Usuario == txtDocumento.Text && u.Contrasena == txtClave.Text).FirstOrDefault();
 
             if (ousuario != null)

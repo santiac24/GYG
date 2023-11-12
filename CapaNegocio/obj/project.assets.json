@@ -819,19 +819,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vpadi\\.nuget\\packages\\": {}
+    "C:\\Users\\Jose\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vpadi\\Downloads\\GYG\\CapaNegocio\\CapaNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaNegocio\\CapaNegocio.csproj",
       "projectName": "CapaNegocio",
-      "projectPath": "C:\\Users\\vpadi\\Downloads\\GYG\\CapaNegocio\\CapaNegocio.csproj",
-      "packagesPath": "C:\\Users\\vpadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vpadi\\Downloads\\GYG\\CapaNegocio\\obj\\",
+      "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaNegocio\\CapaNegocio.csproj",
+      "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vpadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -845,11 +845,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vpadi\\Downloads\\GYG\\CapaDatos\\CapaDatos.csproj": {
-              "projectPath": "C:\\Users\\vpadi\\Downloads\\GYG\\CapaDatos\\CapaDatos.csproj"
+            "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj": {
+              "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaDatos\\CapaDatos.csproj"
             },
-            "C:\\Users\\vpadi\\Downloads\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
-              "projectPath": "C:\\Users\\vpadi\\Downloads\\GYG\\CapaEntidad\\CapaEntidad.csproj"
+            "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
+              "projectPath": "C:\\Users\\Jose\\Desktop\\Universidad este Semestre\\sistemas_empresarial\\GYG\\CapaEntidad\\CapaEntidad.csproj"
             }
           }
         }

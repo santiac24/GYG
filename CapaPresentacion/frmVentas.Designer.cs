@@ -35,20 +35,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(159, 181);
+            this.label1.Location = new System.Drawing.Point(198, 207);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hola, soy el formulario de ventas";
+            this.label1.Size = new System.Drawing.Size(430, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Hola, soy el formulario de compras";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // frmVentas
+            // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Name = "frmVentas";
-            this.Text = "frmVentas";
+            this.Name = "frmCompras";
+            this.Text = "frmCompras";
             this.ResumeLayout(false);
             this.PerformLayout();
 
