@@ -186,6 +186,14 @@ FechaRegistro datetime default getDate())
 
 GO
 
+create table NEGOCIO(
+IdNegocio int primary key,
+Nombre varchar(60),
+NIT varchar(60),
+Direccion varchar(60),
+Logo varbinary(max) null
+)
+
 -- Procedimientos
 
 --Para insertar un usuario:
@@ -851,13 +859,12 @@ INSERT INTO PERMISOS(Rol_id, NombreMenu) values
 (2, 'menuacercade')
 
 INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id) VALUES ('Jose Rivillas', 'joseale58', abc', 1); ('Julián Trump', 'juliancho', 'def', 2);
-
 INSERT INTO SUBCATEGORIAS(subcategoria, Categoria_id) VALUES ('Blusas',1),('Medias de ositos',2),('Sueter deportivo',3)
 INSERT INTO CATEGORIAS(Categoria) VALUES ('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
 INSERT INTO TALLAS(Talla) VALUES ('S'),('M'),('Xl')
 INSERT INTO COLORES(Color) VALUES ('Amarillo'),('Rojo'),('Verde')
-
 INSERT INTO SEXOS(Sexo) VALUES ('Masculino'), ('Femenino')
+INSERT INTO NEGOCIO (IdNegocio, Nombre, NIT, Direccion) VALUES (1,'Guapas y Guapos', '21931723', 'Bello...')
 
 -- Correcciones
 ALTER TABLE PROVEDORES
