@@ -411,7 +411,11 @@ namespace CapaPresentacion
 
         private void btnlimpiarbuscador_Click_1(object sender, EventArgs e)
         {
-
+            txtbusqueda.Text = "";
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
         }
 
         private void txtindice_TextChanged(object sender, EventArgs e)
@@ -421,7 +425,18 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            string columnaFiltro = ((OpcionesCombo)cbbusqueda.SelectedItem).Valor.ToString();
+            if (dgvdata.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else { row.Visible = false; }
+                }
+            }
         }
     }
 }

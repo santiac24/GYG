@@ -311,5 +311,34 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvdata.CurrentRow.Selected = true;
+            if (dgvdata.Columns[e.ColumnIndex].Name == "seleccion")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id_cliente"].Value.ToString();
+                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
+                    txtCedula.Text = dgvdata.Rows[indice].Cells["cedula"].Value.ToString();
+                    txtCelular.Text = dgvdata.Rows[indice].Cells["Celular"].Value.ToString();
+                    txtDireccion.Text = dgvdata.Rows[indice].Cells["Direccion"].Value.ToString();
+                    
+                    foreach (OpcionesCombo oc in cbsexo.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Id_sexo"].Value))
+                        {
+                            int indice_combo = cbsexo.Items.IndexOf(oc);
+                            cbsexo.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
