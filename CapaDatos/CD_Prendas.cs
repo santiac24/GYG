@@ -19,11 +19,11 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select Id_prenda, prenda, Cantidad_dispo, Precio_compra, Precio_venta, Subcategoria_id," +
-                        " sc.subcategoria, Talla_id, t.Talla, Color_id, c.Color from PRENDAS p" +
-                        "inner join SUBCATEGORIAS sc on sc.Id_subcategoria = p.Subcategoria_id" +
-                        "inner join COLORES c on c.Id_color = p.Color_id" +
-                        "inner join tallas t on t.Id_talla = p.Talla_id ";
+                     string query = "select Id_prenda, prenda, Cantidad_dispo, Precio_compra, Precio_venta, Subcategoria_id," +
+                         " sc.subcategoria, Talla_id, t.Talla, Color_id, c.Color from PRENDAS p" +
+                         " inner join SUBCATEGORIAS sc on sc.Id_subcategoria = p.Subcategoria_id" +
+                         " inner join COLORES c on c.Id_color = p.Color_id" +
+                         " inner join tallas t on t.Id_talla = p.Talla_id ";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
