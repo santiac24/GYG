@@ -876,3 +876,66 @@ ADD Correo varchar(50);
 ALTER TABLE COMPRAS
 ADD Provedor_id int references PROVEDORES(Id_provedor);
 
+
+EXEC sp_rename 'DETALLE_COMPRAS.Precio_venta_unidad', 'Precio_compra_unidad', 'COLUMN';
+
+ALTER TABLE DETALLE_COMPRAS
+ADD Precio_venta_unidad decimal(10,2);
+
+
+
+/* PROCESO PARA REGISTRAR UNA COMPRA */
+
+CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
+	[Prenda_id] int NULL,
+	[Cantidad] int NULL,
+	[Precio_compra_unidad] decimal (10,2) NULL,
+	[Precio_venta_unidad] decimal (10,2) NULL,
+	[Subtotal]  decimal (10,2) NULL
+)
+
+-- Procedimiento para registrar compra con su detalle de compra
+
+CREATE PROCEDURE SP_RegistrarCompra(
+@Valor decimal (10,2),
+@Id_usuario int,
+@Provedor_id int,
+@DetalleCompra [EDetalle_Compra] READONLY,
+@Resultado bit output,
+@Mensaje varchar(500) output
+) AS
+BEGIN
+	
+	BEGIN TRY
+
+		DECLARE @Id_compra int = 0
+		SET @Resultado = 1
+		SET @Mensaje = ''
+
+		BEGIN TRANSACTION registro
+
+		INSERT INTO COMPRAS(Usuario_id,Fecha,Valor,Provedor_id) VALUES (@Id_usuario, GETDATE(),@Valor,@Provedor_id)
+
+		SET @Id_compra = SCOPE_IDENTITY()
+
+		INSERT INTO DETALLE_COMPRAS(Compra_id, Prenda_id, Cantidad, Precio_compra_unidad, Precio_venta_unidad, Subtotal)
+		SELECT @Id_compra, Prenda_id, Cantidad, Precio_compra_unidad, Precio_venta_unidad, Subtotal FROM @DetalleCompra
+
+		UPDATE p SET p.Cantidad_dispo = p.Cantidad_dispo + dc.Cantidad,
+		p.Precio_compra = dc.Precio_compra_unidad,
+		p.Precio_venta = dc.Precio_venta_unidad
+		FROM PRENDAS p INNER JOIN @DetalleCompra dc ON p.Id_prenda = dc.Prenda_id
+
+		COMMIT TRANSACTION registro
+
+	END TRY
+
+	BEGIN CATCH
+		SET @Resultado = 0
+		SET @Mensaje = ERROR_MESSAGE()
+		ROLLBACK TRANSACTION registro
+
+	END CATCH
+
+
+END
