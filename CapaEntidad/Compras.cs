@@ -12,7 +12,7 @@ namespace CapaEntidad
         public string Fecha { get; set; }
         public float Valor { get; set;}
         public Provedores o_Provedor { get; set; }
-
+        public Usuarios o_usuario { get; set; }
         public List<Detalles_compras> Odetalle_compra { get; set; }
     }
 }
