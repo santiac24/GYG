@@ -945,3 +945,7 @@ END
 -- Correcciones
 ALTER TABLE compras
 ADD NumeroDocumento varchar(5);
+
+-- Correcciones
+ALTER TABLE compras
+ADD TipoDocumento varchar(50);

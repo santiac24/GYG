@@ -55,9 +55,9 @@ namespace CapaDatos
 
 
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-
                     oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    
                     Resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 

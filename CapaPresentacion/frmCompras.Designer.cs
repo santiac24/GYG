@@ -172,7 +172,6 @@
             txtidproveedor.Name = "txtidproveedor";
             txtidproveedor.Size = new Size(31, 23);
             txtidproveedor.TabIndex = 23;
-            txtidproveedor.Visible = false;
             // 
             // btnBuscarDocumento
             // 
@@ -477,7 +476,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1155, 727);
+            ClientSize = new Size(1028, 727);
             Controls.Add(btnRegistrar);
             Controls.Add(txttotalapagar);
             Controls.Add(labeltotalapagar);

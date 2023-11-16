@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
 using System;
@@ -77,7 +78,37 @@ namespace CapaPresentacion
                         row.Cells["Subtotal"].Value.ToString(),
                     });
             }
+            int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
+            string numerodocumento = string.Format("{0:00000}", idcorrelativo);
 
+            Compras oCampra = new Compras()
+            {
+                o_usuario = new Usuarios() { Id_usuario = _Usuario.Id_usuario },
+                o_Provedor = new Provedores() { Id_provedor = Convert.ToInt32(txtidproveedor.Text) },
+                NumeroDocumento = numerodocumento,
+                Valor = Convert.ToDecimal(txttotalapagar.Text),
+                TipoDocumento = ((OpcionesCombo)cbotipodocumento.SelectedItem).Texto,
+            };
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Compra().Registrar(oCampra, detalle_compra, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("numero de compra generado:\n" + numerodocumento + "\n\nDesea copiar al portapapeles?",
+                    "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numerodocumento);
+
+                txtidproveedor.Text = "0";
+                txtnrodocumento.Text = "";
+                txtnombreprovedor.Text = "";
+                dgvdata.Rows.Clear();
+                CalcularTotal();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void labelregistrarcompra_Click(object sender, EventArgs e)
