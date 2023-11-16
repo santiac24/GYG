@@ -939,3 +939,9 @@ BEGIN
 
 
 END
+
+-- 15/11/23
+
+-- Correcciones
+ALTER TABLE compras
+ADD NumeroDocumento varchar(5);
