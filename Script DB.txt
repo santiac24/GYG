@@ -949,3 +949,7 @@ ADD NumeroDocumento varchar(5);
 -- Correcciones
 ALTER TABLE compras
 ADD TipoDocumento varchar(50);
+
+-- Correcciones
+ALTER TABLE detalle_compras
+ADD MontoTotal decimal (10,2);
