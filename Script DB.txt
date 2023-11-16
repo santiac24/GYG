@@ -186,6 +186,14 @@ FechaRegistro datetime default getDate())
 
 GO
 
+create table NEGOCIO(
+IdNegocio int primary key,
+Nombre varchar(60),
+NIT varchar(60),
+Direccion varchar(60),
+Logo varbinary(max) null
+)
+
 -- Procedimientos
 
 --Para insertar un usuario:
@@ -851,13 +859,12 @@ INSERT INTO PERMISOS(Rol_id, NombreMenu) values
 (2, 'menuacercade')
 
 INSERT INTO USUARIOS (Nombre, Usuario, Contrasena, Rol_id) VALUES ('Jose Rivillas', 'joseale58', abc', 1); ('Julián Trump', 'juliancho', 'def', 2);
-
 INSERT INTO SUBCATEGORIAS(subcategoria, Categoria_id) VALUES ('Blusas',1),('Medias de ositos',2),('Sueter deportivo',3)
 INSERT INTO CATEGORIAS(Categoria) VALUES ('Ropa Mujer'),('Ropa bebe'),('Ropa Hombre')
 INSERT INTO TALLAS(Talla) VALUES ('S'),('M'),('Xl')
 INSERT INTO COLORES(Color) VALUES ('Amarillo'),('Rojo'),('Verde')
-
 INSERT INTO SEXOS(Sexo) VALUES ('Masculino'), ('Femenino')
+INSERT INTO NEGOCIO (IdNegocio, Nombre, NIT, Direccion) VALUES (1,'Guapas y Guapos', '21931723', 'Bello...')
 
 -- Correcciones
 ALTER TABLE PROVEDORES
@@ -869,3 +876,80 @@ ADD Correo varchar(50);
 ALTER TABLE COMPRAS
 ADD Provedor_id int references PROVEDORES(Id_provedor);
 
+
+EXEC sp_rename 'DETALLE_COMPRAS.Precio_venta_unidad', 'Precio_compra_unidad', 'COLUMN';
+
+ALTER TABLE DETALLE_COMPRAS
+ADD Precio_venta_unidad decimal(10,2);
+
+
+
+/* PROCESO PARA REGISTRAR UNA COMPRA */
+
+CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
+	[Prenda_id] int NULL,
+	[Cantidad] int NULL,
+	[Precio_compra_unidad] decimal (10,2) NULL,
+	[Precio_venta_unidad] decimal (10,2) NULL,
+	[Subtotal]  decimal (10,2) NULL
+)
+
+-- Procedimiento para registrar compra con su detalle de compra
+
+CREATE PROCEDURE SP_RegistrarCompra(
+@Valor decimal (10,2),
+@Id_usuario int,
+@Provedor_id int,
+@DetalleCompra [EDetalle_Compra] READONLY,
+@Resultado bit output,
+@Mensaje varchar(500) output
+) AS
+BEGIN
+	
+	BEGIN TRY
+
+		DECLARE @Id_compra int = 0
+		SET @Resultado = 1
+		SET @Mensaje = ''
+
+		BEGIN TRANSACTION registro
+
+		INSERT INTO COMPRAS(Usuario_id,Fecha,Valor,Provedor_id) VALUES (@Id_usuario, GETDATE(),@Valor,@Provedor_id)
+
+		SET @Id_compra = SCOPE_IDENTITY()
+
+		INSERT INTO DETALLE_COMPRAS(Compra_id, Prenda_id, Cantidad, Precio_compra_unidad, Precio_venta_unidad, Subtotal)
+		SELECT @Id_compra, Prenda_id, Cantidad, Precio_compra_unidad, Precio_venta_unidad, Subtotal FROM @DetalleCompra
+
+		UPDATE p SET p.Cantidad_dispo = p.Cantidad_dispo + dc.Cantidad,
+		p.Precio_compra = dc.Precio_compra_unidad,
+		p.Precio_venta = dc.Precio_venta_unidad
+		FROM PRENDAS p INNER JOIN @DetalleCompra dc ON p.Id_prenda = dc.Prenda_id
+
+		COMMIT TRANSACTION registro
+
+	END TRY
+
+	BEGIN CATCH
+		SET @Resultado = 0
+		SET @Mensaje = ERROR_MESSAGE()
+		ROLLBACK TRANSACTION registro
+
+	END CATCH
+
+
+END
+
+-- 15/11/23
+
+-- Correcciones
+ALTER TABLE compras
+ADD NumeroDocumento varchar(5);
+
+-- Correcciones
+ALTER TABLE compras
+ADD TipoDocumento varchar(50);
+
+-- Correcciones
+ALTER TABLE detalle_compras
+ADD MontoTotal decimal (10,2);

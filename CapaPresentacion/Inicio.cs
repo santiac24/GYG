@@ -21,10 +21,11 @@ namespace CapaPresentacion
         private static Form FormularioActivo = null;
         public Inicio(Usuarios objusuario = null)
         {
-            if(objusuario == null) //Para que mientras programemos, no nos pida estar logueando
+            if (objusuario == null) //Para que mientras programemos, no nos pida estar logueando
             {
                 usuarioActual = new Usuarios() { Usuario = "ADMIN PREDEFINIDO", Id_usuario = 1 };
-            } else
+            }
+            else
             {
                 //Se le pasa el usuario de la sesión
                 usuarioActual = objusuario;
@@ -40,7 +41,7 @@ namespace CapaPresentacion
             foreach (IconMenuItem iconmenu in menu.Items)
             {
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
-                if(encontrado = false)
+                if (encontrado = false)
                 {
                     iconmenu.Visible = false;
                 }
@@ -78,9 +79,9 @@ namespace CapaPresentacion
 
         }
 
-        
 
-        
+
+
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -140,7 +141,7 @@ namespace CapaPresentacion
 
         private void submenuregistrarcompra_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmCompras());
+            AbrirFormulario(menucompras, new frmCompras(usuarioActual));
         }
 
         private void submenuverdetallecompra_Click(object sender, EventArgs e)
@@ -161,6 +162,11 @@ namespace CapaPresentacion
         private void menureportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmReportes());
+        }
+
+        private void submenunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menumantenedor, new frmNegocio());
         }
     }
 

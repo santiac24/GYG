@@ -31,3 +31,14 @@ C:\Users\santi\Desktop\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.dll
 C:\Users\santi\Desktop\GYG\CapaEntidad\obj\Debug\net6.0\refint\CapaEntidad.dll
 C:\Users\santi\Desktop\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.pdb
 C:\Users\santi\Desktop\GYG\CapaEntidad\obj\Debug\net6.0\ref\CapaEntidad.dll
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\bin\Debug\net6.0\CapaEntidad.deps.json
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\bin\Debug\net6.0\CapaEntidad.dll
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\bin\Debug\net6.0\CapaEntidad.pdb
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.AssemblyInfoInputs.cache
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.AssemblyInfo.cs
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.dll
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\refint\CapaEntidad.dll
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\CapaEntidad.pdb
+C:\Users\vpadi\Downloads\GYG\CapaEntidad\obj\Debug\net6.0\ref\CapaEntidad.dll

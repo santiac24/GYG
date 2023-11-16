@@ -10,9 +10,11 @@ namespace CapaEntidad
     {
         public int Id_compra { get; set; }
         public string Fecha { get; set; }
-        public float Valor { get; set;}
+        public string NumeroDocumento { get; set; }
+        public string TipoDocumento { get; set; }
+        public decimal Valor { get; set;}
         public Provedores o_Provedor { get; set; }
-
+        public Usuarios o_usuario { get; set; }
         public List<Detalles_compras> Odetalle_compra { get; set; }
     }
 }
