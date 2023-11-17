@@ -1,6 +1,11 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+
+using System.Data;
+using System.Data.SqlClient;
 using CapaEntidad;
 
 
@@ -8,16 +13,17 @@ namespace CapaDatos
 {
     public class CD_Rol
     {
-        public List<Roles> Listar()
+        public List<Rol> Listar()
         {
-            List<Roles> lista = new List<Roles>();
+            List<Rol> lista = new List<Rol>();
+
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT Id_rol,Rol FROM ROLES");
-
+                    query.AppendLine("select IdRol,Descripcion from ROL");
+      
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
@@ -27,23 +33,25 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Roles()
+                            lista.Add(new Rol()
                             {
-                                Id_rol = Convert.ToInt32(dr["Id_rol"]),
-                                rol = dr["Rol"].ToString()
-
+                                IdRol = Convert.ToInt32(dr["IdRol"]),
+                                Descripcion = dr["Descripcion"].ToString()
                             });
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Roles>();
-                }
 
+                    lista = new List<Rol>();
+                }
             }
 
             return lista;
+
         }
+
+
     }
 }

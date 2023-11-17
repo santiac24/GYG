@@ -10,6 +10,8 @@ namespace CapaNegocio
 {
     public class CN_Negocio
     {
+
+
         private CD_Negocio objcd_negocio = new CD_Negocio();
 
 
@@ -20,25 +22,24 @@ namespace CapaNegocio
 
         public bool GuardarDatos(Negocio obj, out string Mensaje)
         {
-            Mensaje = "";
+            Mensaje = string.Empty;
 
             if (obj.Nombre == "")
             {
-                Mensaje += "Es necesario el nombre del negocio";
+                Mensaje += "Es necesario el nombre\n";
+            }
+
+            if (obj.RUC == "")
+            {
+                Mensaje += "Es necesario el numero de RUC\n";
             }
 
             if (obj.Direccion == "")
             {
-                Mensaje += "Es necesaria la dirección del negocio";
+                Mensaje += "Es necesario la direccion\n";
             }
 
-            if (obj.NIT == "")
-            {
-                Mensaje += "Es necesario tener un NIT";
-            }
-
-            //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
-            if (Mensaje != "")
+            if (Mensaje != string.Empty)
             {
                 return false;
             }
@@ -47,6 +48,7 @@ namespace CapaNegocio
                 return objcd_negocio.GuardarDatos(obj, out Mensaje);
             }
 
+
         }
 
         public byte[] ObtenerLogo(out bool obtenido)
@@ -54,10 +56,12 @@ namespace CapaNegocio
             return objcd_negocio.ObtenerLogo(out obtenido);
         }
 
+
         public bool ActualizarLogo(byte[] imagen, out string mensaje)
         {
             return objcd_negocio.ActualizarLogo(imagen, out mensaje);
         }
-    }
 
+
+    }
 }

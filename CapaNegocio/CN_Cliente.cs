@@ -10,86 +10,83 @@ namespace CapaNegocio
 {
     public class CN_Cliente
     {
-        private CD_Cliente objcd_cliente = new CD_Cliente();
+
+        private CD_Cliente objcd_Cliente = new CD_Cliente();
 
 
-        public List<Clientes> Listar()
+        public List<Cliente> Listar()
         {
-            return objcd_cliente.Listar();
+            return objcd_Cliente.Listar();
         }
 
-        public int Registrar(Clientes obj, out string Mensaje)
+        public int Registrar(Cliente obj, out string Mensaje)
         {
-            Mensaje = "";
+            Mensaje = string.Empty;
 
-            if (obj.Nombre == "")
+            if (obj.Documento == "")
             {
-                Mensaje += "Es necesario el nombre del cliente.\n";
+                Mensaje += "Es necesario el documento del Cliente\n";
             }
 
-            if (obj.Cedula == "")
+            if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el número de cedula del cliente para identificar.\n";
+                Mensaje += "Es necesario el nombre completo del Cliente\n";
             }
 
-            if (obj.Celular == "")
+            if (obj.Correo == "")
             {
-                Mensaje += "Es necesario el celular del cliente.\n";
+                Mensaje += "Es necesario el correo del Cliente\n";
             }
 
-            if (obj.Direccion == "")
-            {
-                Mensaje += "Es necesario poner la dirección del cliente.\n";
-            }
-
-            //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
-            if (Mensaje != "")
+            if (Mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return objcd_cliente.Regitrar(obj, out Mensaje);
+                return objcd_Cliente.Registrar(obj, out Mensaje);
             }
+
 
         }
 
-        public bool Editar(Clientes obj, out string Mensaje)
+
+        public bool Editar(Cliente obj, out string Mensaje)
         {
-            Mensaje = "";
-            if (obj.Nombre == "")
+
+            Mensaje = string.Empty;
+
+            if (obj.Documento == "")
             {
-                Mensaje += "Es necesario el nombre del cliente.\n";
+                Mensaje += "Es necesario el documento del Cliente\n";
             }
 
-            if (obj.Cedula == "")
+            if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el número de cedula del cliente para identificar.\n";
+                Mensaje += "Es necesario el nombre completo del Cliente\n";
             }
 
-            if (obj.Celular == "")
+            if (obj.Correo == "")
             {
-                Mensaje += "Es necesario el celular del cliente.\n";
+                Mensaje += "Es necesario el correo del Cliente\n";
             }
-
-            if (obj.Direccion == "")
-            {
-                Mensaje += "Es necesario poner la dirección del cliente.\n";
-            }
-            //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
-            if (Mensaje != "")
+            if (Mensaje != string.Empty)
             {
                 return false;
             }
             else
             {
-                return objcd_cliente.Editar(obj, out Mensaje);
+                return objcd_Cliente.Editar(obj, out Mensaje);
             }
+
+
         }
 
-        public bool Eliminar(Clientes obj, out string Mensaje)
+
+        public bool Eliminar(Cliente obj, out string Mensaje)
         {
-            return objcd_cliente.Eliminar(obj, out Mensaje);
+            return objcd_Cliente.Eliminar(obj, out Mensaje);
         }
+
     }
 }

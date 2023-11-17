@@ -1,76 +1,76 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
 using CapaDatos;
 using CapaEntidad;
-
 namespace CapaNegocio
 {
     public class CN_Usuario
     {
-    	private CD_Usuario objcd_usuario = new CD_Usuario();
-    	
-    	
-    	public List<Usuarios> Listar()
-    	{
-    		return objcd_usuario.Listar();
-    	}
 
-        public int Registrar(Usuarios obj, out string Mensaje)
+        private CD_Usuario objcd_usuario = new CD_Usuario();
+
+
+        public List<Usuario> Listar()
         {
-            Mensaje = "";
+            return objcd_usuario.Listar();
+        }
 
-            if (obj.Nombre == "")
-            {
-                Mensaje += "Es necesario el nombre del usuario";
+        public int Registrar(Usuario obj,out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (obj.Documento == "") {
+                Mensaje += "Es necesario el documento del usuario\n";
             }
 
-            if (obj.Usuario == "")
+            if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el usario unico para identificar";
+                Mensaje += "Es necesario el nombre completo del usuario\n";
+            }
+            
+            if (obj.Clave == "")
+            {
+                Mensaje += "Es necesario la clave del usuario\n";
             }
 
-            if (obj.Contrasena == "")
-            {
-                Mensaje += "Es necesario la clave del usuario";
-            }
-
-            //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
-            if (Mensaje != "")
+            if (Mensaje != string.Empty)
             {
                 return 0;
             }
-            else
-            {
-                return objcd_usuario.Regitrar(obj, out Mensaje);
+            else {
+                return objcd_usuario.Registrar(obj, out Mensaje);
             }
 
+            
         }
 
-        public bool Editar(Usuarios obj, out string Mensaje)
+
+        public bool Editar(Usuario obj, out string Mensaje)
         {
-            Mensaje = "";
-            if (obj.Nombre == "")
+
+            Mensaje = string.Empty;
+
+            if (obj.Documento == "")
             {
-                Mensaje += "Es necesario el nombre del usuario";
+                Mensaje += "Es necesario el documento del usuario\n";
             }
 
-            if (obj.Usuario == "")
+            if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el usario unico para identificar";
+                Mensaje += "Es necesario el nombre completo del usuario\n";
             }
 
-            if (obj.Contrasena == "")
+            if (obj.Clave == "")
             {
-                Mensaje += "Es necesario la clave del usuario";
+                Mensaje += "Es necesario la clave del usuario\n";
             }
 
-            //Si no se han cumplido las reglas de negocio, no debería llamar al método registrar
-            if (Mensaje != "")
+
+            if (Mensaje != string.Empty)
             {
                 return false;
             }
@@ -78,11 +78,15 @@ namespace CapaNegocio
             {
                 return objcd_usuario.Editar(obj, out Mensaje);
             }
+
+            
         }
 
-        public bool Eliminar(Usuarios obj, out string Mensaje)
+
+        public bool Eliminar(Usuario obj, out string Mensaje)
         {
             return objcd_usuario.Eliminar(obj, out Mensaje);
         }
+
     }
 }

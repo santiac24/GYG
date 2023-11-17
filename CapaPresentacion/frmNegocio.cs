@@ -1,11 +1,11 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
-using DocumentFormat.OpenXml.Drawing.Charts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,83 +20,70 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        //Método para convertir array de bytes en imagen
-        public Image ByteToImage(byte[] imageBytes)
-        {
+        public Image ByteToImage(byte[] imageBytes) {
             MemoryStream ms = new MemoryStream();
-            ms.Write(imageBytes, 0, imageBytes.Length);
-            Image imagen = new Bitmap(ms);
+            ms.Write(imageBytes,0,imageBytes.Length);
+            Image image = new Bitmap(ms);
 
-            return imagen;
+            return image;
         }
+
+
         private void frmNegocio_Load(object sender, EventArgs e)
         {
             bool obtenido = true;
-            byte[] byteimagen = new CN_Negocio().ObtenerLogo(out obtenido);
+            byte[] byteimage = new CN_Negocio().ObtenerLogo(out obtenido);
 
             if (obtenido)
-            {
-                picLogo.Image = ByteToImage(byteimagen);
-            }
+                picLogo.Image = ByteToImage(byteimage);
 
             Negocio datos = new CN_Negocio().ObtenerDatos();
 
-            txtnombrenegocio.Text = datos.Nombre;
-            txtnit.Text = datos.NIT;
+            txtnombre.Text = datos.Nombre;
+            txtruc.Text = datos.RUC;
             txtdireccion.Text = datos.Direccion;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btnsubir_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
 
-        }
+            OpenFileDialog oOpenFileDialog = new OpenFileDialog();
+            oOpenFileDialog.FileName = "Files|*.jpg;*.jpeg;*.png";
 
-        private void btnsubirimagen_Click(object sender, EventArgs e)
-        {
-            String mensaje = string.Empty;
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.FileName = "Files|*.jpg;*jpeg;*.png";
+            if (oOpenFileDialog.ShowDialog() == DialogResult.OK) {
 
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                byte[] byteimage = File.ReadAllBytes(ofd.FileName);
-                bool respuesta = new CN_Negocio().ActualizarLogo(byteimage, out mensaje);
+                byte[] byteimage = File.ReadAllBytes(oOpenFileDialog.FileName);
+                bool respuesta = new CN_Negocio().ActualizarLogo(byteimage,out mensaje);
 
-                if (respuesta)
-                {
-                    picLogo.Image = ByteToImage(byteimage);
-                }
+                if(respuesta)
+                    picLogo.Image= ByteToImage(byteimage);
                 else
-                {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+
             }
+
         }
 
-        private void btnguardar_Click(object sender, EventArgs e)
+        private void btnguardarcambios_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
 
             Negocio obj = new Negocio()
             {
-                Nombre = txtnombrenegocio.Text,
-                NIT = txtnit.Text,
-                Direccion = txtdireccion.Text,
+                Nombre = txtnombre.Text,
+                RUC = txtruc.Text,
+                Direccion = txtdireccion.Text
             };
 
             bool respuesta = new CN_Negocio().GuardarDatos(obj, out mensaje);
 
-            if (respuesta) {
+            if(respuesta)
                 MessageBox.Show("Los cambios fueron guardados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else
-            {
-                MessageBox.Show("No se pudieron guardar los cambios" + mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            else
+                MessageBox.Show("No se pudo guardar los cambios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
     }
 }
