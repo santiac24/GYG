@@ -42,7 +42,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 13);
             this.label3.TabIndex = 36;
-            this.label3.Text = "Desarrollado por: Codigo Estudiante";
+            this.label3.Text = "Proyecto Sistemas empresariales";
             // 
             // label4
             // 
@@ -51,7 +51,12 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 174);
             this.label4.TabIndex = 34;
-            this.label4.Text = resources.GetString("label4.Text");
+            this.label4.Text = "En este sistema de escritorio de venta se puede realizar lo siguiente \n" +
+                "1. Gestion de compra y venta de insumos\n" +
+                "2. Ingreso de clientes, proveedores y usuarios\n" +
+                "3. El mantenimiento de los insumos (prendas) y las categorias\n" +
+                "4. Configurar los aspectos del negocio: como su logo\n" +
+                "5. Crear reportes de las ventas";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -61,7 +66,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(269, 35);
             this.label2.TabIndex = 35;
-            this.label2.Text = "Este sistema se publica bajo los términos de la licenca MIT";
+            this.label2.Text = "Este sistema busca implementar lo aprendido en clase para la gestion de ventas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -72,7 +77,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Open Source";
+            this.label1.Text = "Venta de ropa GYG";
             // 
             // mdAcercade
             // 
