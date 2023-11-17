@@ -369,3 +369,6 @@ C:\Users\vpadi\Music\GYG\CapaPresentacion\obj\Debug\net6.0-windows\refint\CapaPr
 C:\Users\vpadi\Music\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.pdb
 C:\Users\vpadi\Music\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.genruntimeconfig.cache
 C:\Users\vpadi\Music\GYG\CapaPresentacion\obj\Debug\net6.0-windows\ref\CapaPresentacion.dll
+C:\Users\santi\Desktop\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.frmNegocio.resources
+C:\Users\santi\Desktop\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.Modales.md_Productos.resources
+C:\Users\santi\Desktop\GYG\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.Modales.md_Provedor.resources

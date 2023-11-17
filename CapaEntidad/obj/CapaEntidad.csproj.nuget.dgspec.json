@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj": {}
+    "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
+    "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj",
         "projectName": "CapaEntidad",
-        "projectPath": "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj",
-        "packagesPath": "C:\\Users\\vpadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\obj\\",
+        "projectPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj",
+        "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vpadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
