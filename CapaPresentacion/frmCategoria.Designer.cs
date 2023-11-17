@@ -205,7 +205,7 @@
             this.label10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.label10.Size = new System.Drawing.Size(841, 57);
             this.label10.TabIndex = 48;
-            this.label10.Text = "Lista de Categorias:";
+            this.label10.Text = "Lista de categorias:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtindice
@@ -224,9 +224,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(27, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(162, 25);
+            this.label9.Size = new System.Drawing.Size(157, 25);
             this.label9.TabIndex = 46;
-            this.label9.Text = "Detalle Categoria";
+            this.label9.Text = "Detalle categoria";
             // 
             // btneliminar
             // 

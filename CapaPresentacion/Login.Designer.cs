@@ -97,9 +97,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(260, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Nro Documento:";
+            this.label3.Text = "Nro documento:";
             // 
             // label4
             // 
@@ -164,7 +164,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.LogoCanal;
             this.pictureBox1.Location = new System.Drawing.Point(421, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(61, 50);
