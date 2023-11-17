@@ -30,21 +30,21 @@
         {
             dbinformaciondelacompra = new GroupBox();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtusuario = new TextBox();
+            txttipodocumento = new TextBox();
             labeltipodocumento = new Label();
             txtfecha = new TextBox();
             label1 = new Label();
             label8 = new Label();
             labelregistrarcompra = new Label();
             label9 = new Label();
-            txtbusqueda = new TextBox();
+            txtid = new TextBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnBuscar = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
-            textBox4 = new TextBox();
+            txtnombreproveedor = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtidprovedor = new TextBox();
             label4 = new Label();
             dgvdata = new DataGridView();
             IdProducto = new DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             Cantidad = new DataGridViewTextBoxColumn();
             Subtotal = new DataGridViewTextBoxColumn();
             btnEliminar = new DataGridViewTextBoxColumn();
-            txtproducto = new TextBox();
+            txttotal = new TextBox();
             labelproducto = new Label();
             btnexportar = new FontAwesome.Sharp.IconButton();
             dbinformaciondelacompra.SuspendLayout();
@@ -66,8 +66,8 @@
             // 
             dbinformaciondelacompra.BackColor = Color.White;
             dbinformaciondelacompra.Controls.Add(label2);
-            dbinformaciondelacompra.Controls.Add(textBox2);
-            dbinformaciondelacompra.Controls.Add(textBox1);
+            dbinformaciondelacompra.Controls.Add(txtusuario);
+            dbinformaciondelacompra.Controls.Add(txttipodocumento);
             dbinformaciondelacompra.Controls.Add(labeltipodocumento);
             dbinformaciondelacompra.Controls.Add(txtfecha);
             dbinformaciondelacompra.Controls.Add(label1);
@@ -83,27 +83,27 @@
             label2.AutoSize = true;
             label2.Location = new Point(480, 36);
             label2.Name = "label2";
-            label2.Size = new Size(114, 15);
+            label2.Size = new Size(50, 15);
             label2.TabIndex = 6;
-            label2.Text = "Tipo de documento:";
+            label2.Text = "Usuario:";
             // 
-            // textBox2
+            // txtusuario
             // 
-            textBox2.AcceptsTab = true;
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(480, 54);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 23);
-            textBox2.TabIndex = 5;
+            txtusuario.AcceptsTab = true;
+            txtusuario.Enabled = false;
+            txtusuario.Location = new Point(480, 54);
+            txtusuario.Name = "txtusuario";
+            txtusuario.Size = new Size(186, 23);
+            txtusuario.TabIndex = 5;
             // 
-            // textBox1
+            // txttipodocumento
             // 
-            textBox1.AcceptsTab = true;
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(247, 54);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(186, 23);
-            textBox1.TabIndex = 4;
+            txttipodocumento.AcceptsTab = true;
+            txttipodocumento.Enabled = false;
+            txttipodocumento.Location = new Point(247, 54);
+            txttipodocumento.Name = "txttipodocumento";
+            txttipodocumento.Size = new Size(186, 23);
+            txttipodocumento.TabIndex = 4;
             // 
             // labeltipodocumento
             // 
@@ -167,12 +167,12 @@
             label9.TabIndex = 55;
             label9.Text = "Numero Documento:";
             // 
-            // txtbusqueda
+            // txtid
             // 
-            txtbusqueda.Location = new Point(793, 50);
-            txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(174, 23);
-            txtbusqueda.TabIndex = 56;
+            txtid.Location = new Point(793, 50);
+            txtid.Name = "txtid";
+            txtid.Size = new Size(174, 23);
+            txtid.TabIndex = 56;
             // 
             // iconButton1
             // 
@@ -207,13 +207,14 @@
             btnBuscar.Size = new Size(50, 29);
             btnBuscar.TabIndex = 57;
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(txtnombreproveedor);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtidprovedor);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(71, 192);
             groupBox1.Name = "groupBox1";
@@ -222,14 +223,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Proveedor";
             // 
-            // textBox4
+            // txtnombreproveedor
             // 
-            textBox4.AcceptsTab = true;
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(242, 54);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(186, 23);
-            textBox4.TabIndex = 3;
+            txtnombreproveedor.AcceptsTab = true;
+            txtnombreproveedor.Enabled = false;
+            txtnombreproveedor.Location = new Point(242, 54);
+            txtnombreproveedor.Name = "txtnombreproveedor";
+            txtnombreproveedor.Size = new Size(186, 23);
+            txtnombreproveedor.TabIndex = 3;
             // 
             // label3
             // 
@@ -240,14 +241,14 @@
             label3.TabIndex = 2;
             label3.Text = "Nombre";
             // 
-            // textBox3
+            // txtidprovedor
             // 
-            textBox3.AcceptsTab = true;
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(6, 54);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(186, 23);
-            textBox3.TabIndex = 1;
+            txtidprovedor.AcceptsTab = true;
+            txtidprovedor.Enabled = false;
+            txtidprovedor.Location = new Point(6, 54);
+            txtidprovedor.Name = "txtidprovedor";
+            txtidprovedor.Size = new Size(186, 23);
+            txtidprovedor.TabIndex = 1;
             // 
             // label4
             // 
@@ -319,13 +320,13 @@
             btnEliminar.ReadOnly = true;
             btnEliminar.Width = 50;
             // 
-            // txtproducto
+            // txttotal
             // 
-            txtproducto.Enabled = false;
-            txtproducto.Location = new Point(168, 613);
-            txtproducto.Name = "txtproducto";
-            txtproducto.Size = new Size(90, 23);
-            txtproducto.TabIndex = 62;
+            txttotal.Enabled = false;
+            txttotal.Location = new Point(168, 613);
+            txttotal.Name = "txttotal";
+            txttotal.Size = new Size(90, 23);
+            txttotal.TabIndex = 62;
             // 
             // labelproducto
             // 
@@ -363,13 +364,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1155, 684);
             Controls.Add(btnexportar);
-            Controls.Add(txtproducto);
+            Controls.Add(txttotal);
             Controls.Add(labelproducto);
             Controls.Add(dgvdata);
             Controls.Add(groupBox1);
             Controls.Add(iconButton1);
             Controls.Add(btnBuscar);
-            Controls.Add(txtbusqueda);
+            Controls.Add(txtid);
             Controls.Add(label9);
             Controls.Add(labelregistrarcompra);
             Controls.Add(dbinformaciondelacompra);
@@ -394,17 +395,17 @@
         private Label label1;
         private Label label8;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtusuario;
+        private TextBox txttipodocumento;
         private Label labelregistrarcompra;
         private Label label9;
-        private TextBox txtbusqueda;
+        private TextBox txtid;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private GroupBox groupBox1;
-        private TextBox textBox4;
+        private TextBox txtnombreproveedor;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtidprovedor;
         private Label label4;
         private DataGridView dgvdata;
         private DataGridViewTextBoxColumn IdProducto;
@@ -414,7 +415,7 @@
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn Subtotal;
         private DataGridViewTextBoxColumn btnEliminar;
-        private TextBox txtproducto;
+        private TextBox txttotal;
         private Label labelproducto;
         private FontAwesome.Sharp.IconButton btnexportar;
     }
