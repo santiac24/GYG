@@ -799,19 +799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santi\\.nuget\\packages\\": {}
+    "C:\\Users\\vpadi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\Desktop\\GYG\\CapaDatos\\CapaDatos.csproj",
+      "projectUniqueName": "C:\\Users\\vpadi\\Music\\GYG\\CapaDatos\\CapaDatos.csproj",
       "projectName": "CapaDatos",
-      "projectPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaDatos\\CapaDatos.csproj",
-      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaDatos\\obj\\",
+      "projectPath": "C:\\Users\\vpadi\\Music\\GYG\\CapaDatos\\CapaDatos.csproj",
+      "packagesPath": "C:\\Users\\vpadi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vpadi\\Music\\GYG\\CapaDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vpadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -825,8 +825,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
-              "projectPath": "C:\\Users\\santi\\Desktop\\GYG\\CapaEntidad\\CapaEntidad.csproj"
+            "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj": {
+              "projectPath": "C:\\Users\\vpadi\\Music\\GYG\\CapaEntidad\\CapaEntidad.csproj"
             }
           }
         }
